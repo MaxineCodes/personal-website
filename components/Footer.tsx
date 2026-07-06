@@ -14,13 +14,19 @@ export default function Footer() {
                         <p className="mt-2 text-sm">Software Developer & Technical 3D Artist</p>
                     </div>
 
-                    {/* Links section */}
+                    {/* Navigation section */}
                     <nav className="flex flex-col gap-2">
                         <h3 className="text-lg font-semibold text-white">Navigation</h3>
                         <Link href="/" className="hover:text-white transition-colors">Home</Link>
                         <Link href="/portfolio" className="hover:text-white transition-colors">Portfolio</Link>
                         <Link href="/resume" className="hover:text-white transition-colors">Resume</Link>
                         <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+                    </nav>
+
+                    {/* Compendium section */}
+                    <nav className="flex flex-col gap-2">
+                        <h3 className="text-lg font-semibold text-white">Compendium of Knowledge</h3>
+                        <Link href="/compendium" className="hover:text-white transition-colors">Compendium</Link>
                     </nav>
 
                     {/* Connect section */}
