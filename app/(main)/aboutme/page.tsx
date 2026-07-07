@@ -111,7 +111,7 @@ export default function Home() {
             </section>
 
             {/* ===== Content sections below the banner ===== */}
-            <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+            <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
 
                 {/* ===== About Me Section ===== */}
                 <section className="mt-10">
