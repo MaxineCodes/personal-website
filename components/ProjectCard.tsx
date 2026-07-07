@@ -17,7 +17,7 @@ export default function ProjectCard({
                                     }: ProjectCardProps) {
     return (
         <Link
-            href={`/portfolio/${project.slug}`}
+            href={`/app/(main)/portfolio/${project.slug}`}
             className="card-dark block overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
         >
             {/* Thumbnail — square */}
