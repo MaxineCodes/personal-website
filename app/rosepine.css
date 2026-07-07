@@ -1,0 +1,68 @@
+/* CSS Custom Properties for consistent theming */
+:root {
+    /* Core Colors */
+    --color-primary: #EBBCB9; /* main color */
+    --color-secondary: #30748F; /* accent */
+    --color-pink: #EC6F92;
+    --color-coral: #925B79; /* from BubblesRT render banner image */
+    --color-yellow: #F5C178;
+    --color-light-green: #9DCFD9;
+    --color-lavender: #C4A7E7;
+
+
+    /* Background Colors */
+    --color-bg-0: #1A1824;
+    --color-bg-1: #1F1D2E;
+    --color-bg-2: #26223B;
+    --color-bg-3: #6F6E85;
+    --color-bg-4: #DFDEF3;
+    --color-bg-dark: var(--color-bg-0); /* Near-black */
+    --color-bg: var(--color-bg-2); /* Default dark colour */
+    --color-bg-default: var(--color-bg-2); /* Default dark colour */
+    --color-bg-gray: var(--color-bg-3); /* Gray colour */
+    --color-bg-light: var(--color-bg-4); /* White-ish colour */
+    --color-bg-terminal: var(--color-bg-0); /* terminal colour  */
+
+    /* Text Colors */
+    --color-text-light: var(--color-bg-4);
+    --color-text-dark: var(--color-bg-0);
+
+    /* Semantic Colors */
+    --color-success: var(--color-light-green);
+    --color-warning: var(--color-yellow);
+    --color-danger: var(--color-pink);
+    --color-info: var(--color-lavender);
+}
+
+/* ===== Terminal / Typewriter ===== */
+.terminal {
+    font-family: "Source Code Pro", "Courier New", monospace;
+    color: var(--color-light-green);
+    background-color: var(--color-bg-terminal);
+    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid var(--color-light-green);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .05em;
+    animation:
+            typing 1.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--color-text-light); }
+}
