@@ -8,7 +8,7 @@ description: "Zbrush sculpt, based on the Krogan, an alien species from the Mass
 banner: ""
 tags: 
 software: ["ZBrush"]
-featured: true
+featured: false
 ---
 
 ![Front and back](https://cdnb.artstation.com/p/assets/images/images/037/605/101/large/maxine-3d-krogan-fanart-presentation-1.jpg)
