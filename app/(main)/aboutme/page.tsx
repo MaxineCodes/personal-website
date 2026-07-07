@@ -38,7 +38,7 @@ export default function Home() {
     // Fallback: if no featured projects, show the 3 most recent
     const projectsToShow = featuredProjects.length > 0
         ? featuredProjects
-        : allProjects.slice(0, 3);
+        : allProjects.slice(0, 48);
 
     return (
         <div
@@ -126,16 +126,16 @@ export default function Home() {
                                 with a huge passion for 3D graphics, rendering engines,
                                 mathematics and optimization.
                             </p>
-                            <p className="mb-3 text-sm leading-relaxed text-[var(--color-bg-3)]">
+                            <p className="mb-3 text-sm leading-relaxed text-[var(--color-bg-4)]">
                                 Currently studying Software Engineering at the Hanze University
                                 of Applied Science.
                             </p>
-                            <p className="mb-3 text-sm leading-relaxed text-[var(--color-bg-3)]">
+                            <p className="mb-3 text-sm leading-relaxed text-[var(--color-bg-4)]">
                                 Having started as a freelancer in 3D game art and moving more
                                 towards programming as time goes on, I see myself as a software
                                 engineer who can bridge gaps between art and code.
                             </p>
-                            <p className="text-sm leading-relaxed text-[var(--color-bg-3)]">
+                            <p className="text-sm leading-relaxed text-[var(--color-bg-4)]">
                                 Or simply put.. When artists and designers come up with crazy
                                 impossible ideas, I come up with crazy implementations to make
                                 it possible!
@@ -222,7 +222,7 @@ export default function Home() {
                             href="/portfolio"
                             className="inline-block rounded-lg bg-[var(--color-primary)] px-6 py-3 font-medium text-[var(--color-bg-0)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--color-light-green)] hover:shadow-lg"
                         >
-                            View All Projects
+                            {"<"} View All Projects {">"}
                         </Link>
                     </div>
                 </section>
@@ -252,7 +252,7 @@ export default function Home() {
                             href="/blog"
                             className="inline-block rounded-lg bg-[var(--color-primary)] px-6 py-3 font-medium text-[var(--color-bg-0)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--color-light-green)] hover:shadow-lg"
                         >
-                            View All Posts →
+                            {"<"} View All Blog Posts {">"}
                         </Link>
                     </div>
                 </section>
