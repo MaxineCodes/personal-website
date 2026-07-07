@@ -40,11 +40,13 @@ export default async function ProjectPage({
     }
 
     return (
-        <div className=""
-             style={{
-                     backgroundColor: "var(--color-bg-darker)"
-                 }}
-        >
+        <div
+            className="min-h-screen"
+            style={{
+                backgroundColor: "var(--color-bg-darker)",
+                backgroundImage: "radial-gradient(var(--color-bg-dark) 2px, transparent 3px)",
+                backgroundSize: "20px 20px",
+        }}>
             <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
 
                 {/* Back link */}

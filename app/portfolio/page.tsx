@@ -6,7 +6,14 @@ export default function PortfolioPage() {
     const projects = getAllProjects();
 
     return (
-        <div className="min-h-screen bg-cover bg-fixed bg-no-repeat" style={{ backgroundImage: "url('/images/pine-forest.svg')" }}>
+        /*<div className="min-h-screen bg-cover bg-fixed bg-no-repeat" style={{ backgroundImage: "url('/images/pine-forest.svg')" }}>*/
+        <div
+            className="min-h-screen"
+            style={{
+                backgroundColor: "var(--color-bg-darker)",
+                backgroundImage: "radial-gradient(var(--color-bg-dark) 2px, transparent 3px)",
+                backgroundSize: "20px 20px",
+        }}>
             <div className="mx-auto px-4 py-8 sm:px-6">
 
                 {/* Header */}
@@ -25,7 +32,7 @@ export default function PortfolioPage() {
                         <Link
                             key={project.slug}
                             href={`/portfolio/${project.slug}`}
-                            className="card-light overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                            className="card-dark overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                         >
                             {/* Thumbnail */}
                             <div className="relative aspect-square w-full">
@@ -40,19 +47,16 @@ export default function PortfolioPage() {
 
                             {/* Info */}
                             <div className="p-5">
-                                <h2 className="mb-2 text-lg font-semibold text-[var(--color-text-dark)]">
+                                <h2 className="mb-2 text-lg font-semibold text-[var(--color-text-light)]">
                                     {project.title}
                                 </h2>
-                                <p className="mb-3 text-sm text-[var(--color-bg-3)]">
-                                </p>
                                 <div className="flex flex-wrap gap-1.5">
                                     {project.tags && project.tags.map((tag) => (
                                         <span
                                             key={tag}
-                                            className="rounded-full bg-[var(--color-lavender)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-bg-0)]"
-                                        >
-                      {tag}
-                    </span>
+                                            className="rounded-full bg-[var(--color-lavender)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-text-dark)]"
+                                        >{tag}
+                                        </span>
                                     ))}
                                 </div>
                             </div>
