@@ -21,7 +21,7 @@ export default function Header() {
             className="sticky top-0 z-50 w-full shadow-md backdrop-blur-sm"
             style={{ backgroundColor: "rgba(26, 24, 36, 0.85)" }}
         >
-            <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
+            <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
                 {/* Brand */}
                 <Link
                     href="/"
