@@ -30,7 +30,7 @@ const languages = [
 ];
 
 export default function Home() {
-    // Get featured projects from markdown files
+    // Get featured projects from .md files
     const allProjects = getAllProjects();
     const featuredProjects = allProjects
         .filter((p) => p.featured)

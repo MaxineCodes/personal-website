@@ -9,7 +9,7 @@ export default function Home()
                 {/* ===== Page Title ===== */}
                 <div className="mb-12 text-center">
                     <h1 className="text-4xl font-bold text-(--color-pink) sm:text-5xl">
-                        Contact
+                        Blogs
                     </h1>
                     <p className="mt-3 text-lg text-(--color-text-light)">
                         Currently empty...  :(

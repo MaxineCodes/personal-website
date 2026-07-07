@@ -47,7 +47,7 @@ export default async function ProjectPage({
                 backgroundImage: "radial-gradient(var(--color-bg-dark) 2px, transparent 3px)",
                 backgroundSize: "20px 20px",
         }}>
-            <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+            <div className="mx-auto max-w-[90vw] xl:max-w-[1600px] px-4 py-6 sm:px-6">
 
                 {/* Back link */}
                 <Link
@@ -58,11 +58,11 @@ export default async function ProjectPage({
                 </Link>
 
                 {/* ArtStation-style two-column layout */}
-                <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
+                <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
 
                     {/* ===== Left: Media + Content ===== */}
                     <main className="flex flex-col gap-6">
-                        {/* Main media card (banner/video) */}
+                        {/* Main media card */}
                         <div className="card-dark overflow-hidden rounded-xl shadow-xl">
                             {project.banner ? (
                                 <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
@@ -71,7 +71,7 @@ export default async function ProjectPage({
                                         alt={project.title}
                                         fill
                                         className="object-contain"
-                                        sizes="(max-width: 1024px) 100vw, calc(100vw - 320px - 1.5rem)"
+                                        sizes="(max-width: 1024px) 90vw, calc(90vw - 320px - 1.5rem)"
                                         priority
                                     />
                                 </div>
@@ -100,7 +100,7 @@ export default async function ProjectPage({
                         <div className="card-dark p-5">
                             <div className="card-dark overflow-hidden">
                                 {project.thumbnail ? (
-                                    <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
+                                    <div className="relative w-full" style={{ aspectRatio: "1 / 1" }}>
                                         <Image
                                             src={project.thumbnail}
                                             alt={project.title}

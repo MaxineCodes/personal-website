@@ -32,7 +32,7 @@ export default function ProjectCard({
 
                 {/* Featured badge */}
                 {showFeaturedBadge && project.featured && (
-                    <span className="absolute right-2 top-2 rounded-full bg-[var(--color-yellow)] px-2.5 py-1 text-xs font-semibold text-[var(--color-bg-0)] shadow-md">
+                    <span className="absolute right-2 top-2 rounded-full bg-(--color-yellow) px-2.5 py-1 text-xs font-semibold text-(--color-bg-0) shadow-md">
             ★ Featured
           </span>
                 )}
@@ -40,13 +40,13 @@ export default function ProjectCard({
 
             {/* Info */}
             <div className="p-4">
-                <h5 className="mb-2 font-medium text-[var(--color-text-light)]">
+                <h5 className="mb-2 font-medium text-(--color-text-light)">
                     {project.title}
                 </h5>
 
                 {/* Meta line: role · duration · date */}
                 {(project.date) && (
-                    <p className="mb-2 text-xs text-[var(--color-bg-3)]">
+                    <p className="mb-2 text-xs text-(--color-bg-3)">
                         {project.date && <span>{project.date}</span>}
                     </p>
                 )}
@@ -57,13 +57,13 @@ export default function ProjectCard({
                         {project.tags.slice(0, maxTags).map((tag) => (
                             <span
                                 key={tag}
-                                className="rounded-full bg-[var(--color-lavender)] px-2 py-0.5 text-xs font-medium text-[var(--color-bg-0)]"
+                                className="rounded-full bg-(--color-lavender) px-2 py-0.5 text-xs font-medium text-(--color-bg-0)"
                             >
                 {tag}
               </span>
                         ))}
                         {project.tags.length > maxTags && (
-                            <span className="px-1 text-xs text-[var(--color-bg-3)]">
+                            <span className="px-1 text-xs text-(--color-bg-3)">
                 +{project.tags.length - maxTags}
               </span>
                         )}
