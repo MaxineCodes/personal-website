@@ -39,7 +39,7 @@ export default function Home() {
                     href={card.href}
                     className="group relative flex flex-col overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                 >
-                  {/* Image — fills the top of the card */}
+                  {/* Image */}
                   <div className="relative h-156 w-full overflow-hidden">
                     <Image
                         src={card.image}
@@ -52,7 +52,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#221f2c]/90 via-[#221f2c]/30 to-transparent" />
                   </div>
 
-                  {/* Text content — overlaid at the bottom */}
+                  {/* Text content*/}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <h2 className="mb-1.5 text-xl font-semibold text-[#FDFBF9] transition-colors group-hover:text-[#E3D2D0]">
                       {card.title}
