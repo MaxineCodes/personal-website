@@ -66,3 +66,37 @@
     from, to { border-color: transparent; }
     50% { border-color: var(--color-text-light); }
 }
+
+
+/* ===== Card styles ===== */
+.card-dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-dark:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-light {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-light:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Terminal text color utility ===== */
+.text-terminal {
+    color: var(--color-light-green);
+}
+.bg-terminal {
+    background-color: var(--color-bg-terminal);
+}
