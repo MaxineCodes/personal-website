@@ -1,6 +1,5 @@
-import Link from "next/link";
-import Image from "next/image";
 import { getAllProjects, type ProjectMeta } from "@/libraries/projectParser";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function PortfolioPage() {
     const projects = getAllProjects();
@@ -29,38 +28,12 @@ export default function PortfolioPage() {
                 {/* Project grid */}
                 <div className="grid gap-6 sm:grid-cols-5 lg:grid-cols-4">
                     {projects.map((project: ProjectMeta) => (
-                        <Link
+                        <ProjectCard
                             key={project.slug}
-                            href={`/portfolio/${project.slug}`}
-                            className="card-dark overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
-                        >
-                            {/* Thumbnail */}
-                            <div className="relative aspect-square w-full">
-                                <Image
-                                    src={project.thumbnail}
-                                    alt={project.title}
-                                    fill
-                                    /*className="object-cover"*/
-                                    /*sizes="(max-width: 768px) 100vw, 33vw"*/
-                                />
-                            </div>
-
-                            {/* Info */}
-                            <div className="p-5">
-                                <h2 className="mb-2 text-lg font-semibold text-[var(--color-text-light)]">
-                                    {project.title}
-                                </h2>
-                                <div className="flex flex-wrap gap-1.5">
-                                    {project.tags && project.tags.map((tag) => (
-                                        <span
-                                            key={tag}
-                                            className="rounded-full bg-[var(--color-lavender)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-text-dark)]"
-                                        >{tag}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        </Link>
+                            project={project}
+                            showFeaturedBadge
+                            maxTags={3}
+                        />
                     ))}
                 </div>
             </div>

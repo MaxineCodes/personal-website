@@ -54,7 +54,15 @@ const dccSkills = [
 
 export default function ResumePage() {
     return (
-        <div className="min-h-screen bg-cover bg-fixed bg-no-repeat" style={{ backgroundImage: "url('/images/pine-forest.svg')" }}>
+        <div
+            className="min-h-screen"
+            style={{
+                backgroundColor: "var(--color-bg-darker)",
+                backgroundImage: "url('/images/pine-forest.svg')",
+                backgroundSize: "cover",
+                backgroundAttachment: "fixed",
+                backgroundRepeat: "no-repeat",
+        }}>
             <div
                 className="card-dark p-6 shadow-lg mx-auto max-w-4xl px-4 py-8 sm:px-6"
                 style={{ backgroundColor: "var(--color-bg-4)" }}>
