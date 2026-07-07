@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const cards = [
   {
-    title: "My Portfolio",
+    title: "About Me",
     description: "Learn about me. :)",
     image: "/images/profile_icon.jpg",
-    href: "/portfolio",
+    href: "/aboutme",
   },
   {
     title: "Digital Compendium",
