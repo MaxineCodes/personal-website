@@ -17,6 +17,7 @@
     --color-bg-3: #6F6E85;
     --color-bg-4: #DFDEF3;
     --color-bg-dark: var(--color-bg-0); /* Near-black */
+    --color-bg-darker: #15131D;
     --color-bg: var(--color-bg-2); /* Default dark colour */
     --color-bg-default: var(--color-bg-2); /* Default dark colour */
     --color-bg-gray: var(--color-bg-3); /* Gray colour */

@@ -40,7 +40,11 @@ export default async function ProjectPage({
     }
 
     return (
-        <div className="min-h-screen bg-cover bg-fixed bg-no-repeat bg-[var(--color-terminal)]">
+        <div className=""
+             style={{
+                     backgroundColor: "var(--color-bg-darker)"
+                 }}
+        >
             <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
 
                 {/* Back link */}
@@ -75,7 +79,7 @@ export default async function ProjectPage({
                         {/* Markdown content card */}
                         <div className="card-dark rounded-xl p-6 shadow-lg sm:p-8">
                             <div
-                                className="prose prose-sm max-w-none text-[var(--color-bg-0)]
+                                className="prose prose-sm max-w-none text-[var(--color-text-light)]
                                     prose-headings:text-[var(--color-bg-0)]
                                     prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-6 prose-h2:mb-3
                                     prose-h3:text-lg prose-h3:font-medium prose-h3:mt-5 prose-h3:mb-2
