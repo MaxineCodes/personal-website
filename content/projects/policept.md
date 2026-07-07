@@ -2,7 +2,7 @@
 title: "WIP VTuber/VRChat Character Commission"
 slug: "policept"
 date: "2025-01-01"
-thumbnail: "/projects/policept_wip.jpg"
+thumbnail: "/projects/policept_wip_thumbnail.jpg"
 description: "blabla"
 
 banner: ""
