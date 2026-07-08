@@ -55,10 +55,10 @@ const dccSkills = [
 export default function ResumePage() {
     return (
         <div
-            className="min-h-screen"
+            className="pine-forest-bg min-h-screen"
             style={{
-                backgroundColor: "var(--color-bg-darker)",
-                backgroundImage: "url('/images/pine-forest.svg')",
+                /*backgroundColor: "var(--color-background)",*/
+                /*backgroundImage: "url('/images/pine-forest.svg')",*/
                 backgroundSize: "cover",
                 backgroundAttachment: "fixed",
                 backgroundRepeat: "no-repeat",
@@ -69,10 +69,10 @@ export default function ResumePage() {
 
                 {/* ===== Page Header ===== */}
                 <div className="mb-8 text-center">
-                    <h1 className="text-3xl font-bold text-[var(--color-coral)] sm:text-4xl">
+                    <h1 className="text-3xl font-bold (--color-love) sm:text-4xl">
                         Resume
                     </h1>
-                    <p className="mt-2 text-base text-[var(--color-bg-3)]">
+                    <p className="mt-2 text-base (--color-overlay)">
                         My experience and qualifications
                     </p>
                 </div>
@@ -84,20 +84,20 @@ export default function ResumePage() {
 
                         {/* Education Cards */}
                         <div className="card-light p-6 shadow-lg">
-                            <h2 className="mb-4 text-xl font-semibold text-[var(--color-bg-0)]">
+                            <h2 className="mb-4 text-xl font-semibold text-(--override-dawn-color-text)">
                                 Education
                             </h2>
                             {education.map((edu) => (
                                 <div key={edu.title}>
-                                    <h3 className="text-base font-medium text-[var(--color-bg-0)]">
+                                    <h3 className="text-base font-medium text-(--override-dawn-color-text)">
                                         {edu.title}
                                     </h3>
-                                    <p className="mb-1 text-sm text-[var(--color-bg-3)]">{edu.period}</p>
+                                    <p className="mb-1 text-sm (--override-dawn-color-overlay)">{edu.period}</p>
                                     {edu.details.map((d) => (
-                                        <p key={d} className="mb-3 text-sm text-[var(--color-bg-3)]">{d}</p>
+                                        <p key={d} className="mb-3 text-sm (--override-dawn-color-overlay)">{d}</p>
                                     ))}
                                     {edu.bullets.map((b, i) => (
-                                        <p key={i} className="mb-1 text-sm text-[var(--color-bg-0)]">
+                                        <p key={i} className="mb-1 text-sm text-(--override-dawn-color-text)">
                                             {b}
                                         </p>
                                     ))}
@@ -112,13 +112,13 @@ export default function ResumePage() {
                             </h2>
                             {experience.map((job) => (
                                 <div key={job.title} className="card-light p-3 shadow-lg">
-                                    <h3 className="text-base font-medium text-[var(--color-bg-0)]">
+                                    <h3 className="text-base font-medium text-(--override-dawn-color-text)">
                                         {job.title}
                                     </h3>
-                                    <p className="mb-1 text-sm text-[var(--color-bg-3)]">{job.period}</p>
-                                    <p className="mb-3 text-sm text-[var(--color-bg-3)]">{job.location}</p>
+                                    <p className="mb-1 text-sm (--color-overlay)">{job.period}</p>
+                                    <p className="mb-3 text-sm (--color-overlay)">{job.location}</p>
                                     {job.bullets.map((b, i) => (
-                                        <p key={i} className="mb-1 text-sm text-[var(--color-bg-0)]">
+                                        <p key={i} className="mb-1 text-sm text-(--override-dawn-color-text)">
                                             {b}
                                         </p>
                                     ))}
@@ -132,25 +132,25 @@ export default function ResumePage() {
 
                         {/* Skills Card */}
                         <div className="card-light p-6 shadow-lg">
-                            <h2 className="mb-4 text-xl font-semibold text-[var(--color-bg-0)]">
+                            <h2 className="mb-4 text-xl font-semibold text-(--override-dawn-color-text)">
                                 Skills
                             </h2>
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <h4 className="mb-1.5 text-xs font-semibold text-[var(--color-bg-3)]">
+                                    <h4 className="mb-1.5 text-xs font-semibold (--override-dawn-color-overlay)">
                                         Programming
                                     </h4>
-                                    <ul className="space-y-1 text-sm text-[var(--color-bg-0)]">
+                                    <ul className="space-y-1 text-sm text-(--override-dawn-color-text)">
                                         {programmingSkills.map((skill) => (
                                             <li key={skill}>{skill}</li>
                                         ))}
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 className="mb-1.5 text-xs font-semibold text-[var(--color-bg-3)]">
+                                    <h4 className="mb-1.5 text-xs font-semibold (--override-dawn-color-overlay)">
                                         3D DCC
                                     </h4>
-                                    <ul className="space-y-1 text-sm text-[var(--color-bg-0)]">
+                                    <ul className="space-y-1 text-sm text-(--override-dawn-color-text)">
                                         {dccSkills.map((skill) => (
                                             <li key={skill}>{skill}</li>
                                         ))}
@@ -161,28 +161,28 @@ export default function ResumePage() {
 
                         {/* Contact Card */}
                         <div className="card-light p-6 shadow-lg">
-                            <h2 className="mb-4 text-xl font-semibold text-[var(--color-bg-0)]">
+                            <h2 className="mb-4 text-xl font-semibold text-(--override-dawn-color-text)">
                                 Contact
                             </h2>
-                            <div className="space-y-1.5 text-sm text-[var(--color-bg-0)]">
+                            <div className="space-y-1.5 text-sm text-(--override-dawn-color-text)">
                                 <p>
-                                    <span className="text-[var(--color-bg-3)]">E-Mail: </span>
+                                    <span className="(--override-dawn-color-overlay)">E-Mail: </span>
                                     contact@ItsMaxine.eu
                                 </p>
                                 <p>
-                                    <span className="text-[var(--color-bg-3)]">LinkedIn: </span>
+                                    <span className="(--override-dawn-color-overlay)">LinkedIn: </span>
                                     <Link
                                         href="https://www.linkedin.com/in/maxinemeijboom"
-                                        className="text-[var(--color-secondary)] transition-colors hover:text-[var(--color-light-green)]"
+                                        className="text-(--color-pine) transition-colors hover:text-(--color-foam)"
                                     >
                                         linkedin.com/in/maxinemeijboom
                                     </Link>
                                 </p>
                                 <p>
-                                    <span className="text-[var(--color-bg-3)]">Github: </span>
+                                    <span className="(--color-overlay)">Github: </span>
                                     <Link
                                         href="https://github.com/MaxineCodes"
-                                        className="text-[var(--color-secondary)] transition-colors hover:text-[var(--color-light-green)]"
+                                        className="text-(--color-pine) transition-colors hover:text-(--color-foam)"
                                     >
                                         github.com/maxinecodes
                                     </Link>

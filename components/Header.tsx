@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
     { href: "/aboutme", label: "About Me" },
@@ -19,14 +20,12 @@ export default function Header() {
     return (
         <header
             className="sticky top-0 z-50 w-full shadow-md backdrop-blur-sm"
-            style={{ backgroundColor: "rgba(26, 24, 36, 0.85)" }}
+            style={{ backgroundColor: "color-mix(in srgb, var(--color-base) 85%, transparent)" }}
         >
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
                 {/* Brand */}
-                <Link
-                    href="/"
-                    className="text-lg font-bold text-[var(--color-primary)] transition-colors hover:text-[var(--color-lavender)]"
-                >
+                <Link href="/"
+                    className="text-lg font-bold text-(--color-rose) transition-colors hover:text-(--color-love)">
                     ItsMaxine.eu
                 </Link>
 
@@ -44,20 +43,22 @@ export default function Header() {
                                 href={link.href}
                                 className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                                     isActive
-                                        ? "bg-[var(--color-bg-2)] text-[var(--color-primary)]"
-                                        : "text-[var(--color-text-light)] hover:bg-[var(--color-bg-2)]/50 hover:text-[var(--color-primary)]"
+                                        ? "bg-(--color-surface) text-(--color-rose)"
+                                        : "text-(--color-text) hover:bg-(--color-surface)/50 hover:text-(--color-rose)"
                                 }`}
                             >
                                 {link.label}
                             </Link>
                         );
                     })}
+
                 </div>
 
                 {/* Mobile hamburger button */}
+                <ThemeToggle />
                 <button
                     onClick={() => setMobileOpen(!mobileOpen)}
-                    className="rounded-md p-2 text-[var(--color-text-light)] transition-colors hover:bg-[var(--color-bg-2)] md:hidden"
+                    className="rounded-md p-2 text-(--color-text) transition-colors hover:bg-(--color-surface) md:hidden"
                     aria-label="Toggle menu"
                 >
                     <svg
@@ -105,8 +106,8 @@ export default function Header() {
                                     onClick={() => setMobileOpen(false)}
                                     className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                                         isActive
-                                            ? "bg-[var(--color-bg-2)] text-[var(--color-primary)]"
-                                            : "text-[var(--color-text-light)] hover:bg-[var(--color-bg-2)]/50 hover:text-[var(--color-primary)]"
+                                            ? "bg-(--color-surface) text-(--color-rose)"
+                                            : "text-(--color-text) hover:bg-(--color-surface)/50 hover:text-(--color-rose)"
                                     }`}
                                 >
                                     {link.label}

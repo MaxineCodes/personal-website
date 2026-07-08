@@ -9,18 +9,18 @@ export default function PortfolioPage() {
         <div
             className="min-h-screen"
             style={{
-                backgroundColor: "var(--color-bg-darker)",
-                backgroundImage: "radial-gradient(var(--color-bg-dark) 2px, transparent 3px)",
+                backgroundColor: "var(--color-background)",
+                backgroundImage: "radial-gradient(var(--color-base) 2px, transparent 3px)",
                 backgroundSize: "20px 20px",
         }}>
             <div className="mx-auto px-4 py-8 sm:px-6">
 
                 {/* Header */}
                 <div className="mb-8 text-center">
-                    <h1 className="text-3xl font-bold text-[var(--color-primary)] sm:text-4xl">
+                    <h1 className="text-3xl font-bold text-(--color-rose) sm:text-4xl">
                         Portfolio
                     </h1>
-                    <p className="mt-2 text-base text-[var(--color-bg-3)]">
+                    <p className="mt-2 text-base text-(--color-overlay">
                         My projects and work
                     </p>
                 </div>

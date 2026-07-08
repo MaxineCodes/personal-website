@@ -43,8 +43,8 @@ export default async function ProjectPage({
         <div
             className="min-h-screen"
             style={{
-                backgroundColor: "var(--color-bg-darker)",
-                backgroundImage: "radial-gradient(var(--color-bg-dark) 2px, transparent 3px)",
+                backgroundColor: "var(--color-background)",
+                backgroundImage: "radial-gradient(var(--color-base) 2px, transparent 3px)",
                 backgroundSize: "20px 20px",
         }}>
             <div className="mx-auto max-w-[90vw] xl:max-w-[1600px] px-4 py-6 sm:px-6">
@@ -52,7 +52,7 @@ export default async function ProjectPage({
                 {/* Back link */}
                 <Link
                     href="/portfolio"
-                    className="mb-4 inline-block text-sm text-[var(--color-primary)] transition-colors hover:text-[var(--color-lavender)]"
+                    className="mb-4 inline-block text-sm text-(--color-rose) transition-colors hover:text-(--color-iris)"
                 >
                     ← Back to Portfolio
                 </Link>
@@ -63,7 +63,7 @@ export default async function ProjectPage({
                     {/* ===== Left: Media + Content ===== */}
                     <main className="flex flex-col gap-6">
                         {/* Main media card */}
-                        <div className="card-dark overflow-hidden rounded-xl shadow-xl">
+                        <div className="card overflow-hidden rounded-xl shadow-xl">
                             {project.banner ? (
                                 <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
                                     <Image
@@ -79,16 +79,16 @@ export default async function ProjectPage({
                         </div>
 
                         {/* Markdown content card */}
-                        <div className="card-dark rounded-xl p-6 shadow-lg sm:p-8">
+                        <div className="card rounded-xl p-6 shadow-lg sm:p-8">
                             <div
-                                className="prose prose-sm max-w-none text-[var(--color-text-light)]
-                                    prose-headings:text-[var(--color-bg-0)]
+                                className="prose prose-sm max-w-none text-(--color-text)
+                                    prose-headings:text-(--color-text)
                                     prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-6 prose-h2:mb-3
                                     prose-h3:text-lg prose-h3:font-medium prose-h3:mt-5 prose-h3:mb-2
-                                    prose-p:text-[var(--color-bg-0)] prose-p:leading-relaxed
-                                    prose-a:text-[var(--color-secondary)]
+                                    prose-p:text-(--color-text) prose-p:leading-relaxed
+                                    prose-a:text-(--color-pine)
                                     prose-img:rounded-lg prose-img:shadow-md
-                                    prose-li:text-[var(--color-bg-0)]"
+                                    prose-li:text-(--color-text)"
                                 dangerouslySetInnerHTML={{ __html: project.content }}
                             />
                         </div>
@@ -97,8 +97,8 @@ export default async function ProjectPage({
                     {/* ===== Right: Metadata Sidebar ===== */}
                     <aside className="flex flex-col gap-4 lg:sticky lg:top-6 lg:self-start">
                         {/* Title block */}
-                        <div className="card-dark p-5">
-                            <div className="card-dark overflow-hidden">
+                        <div className="card p-5">
+                            <div className="card overflow-hidden">
                                 {project.thumbnail ? (
                                     <div className="relative w-full" style={{ aspectRatio: "1 / 1" }}>
                                         <Image
@@ -112,18 +112,18 @@ export default async function ProjectPage({
                                     </div>
                                 ) : null}
                             </div>
-                            <h1 className="text-xl font-bold text-[var(--color-text-light)] sm:text-2xl">
+                            <h1 className="text-xl font-bold text-(--color-text) sm:text-2xl">
                                 {project.title}
                             </h1>
-                            <p className="mt-2 text-s text-[var(--color-bg-3)]">
+                            <p className="mt-2 text-s (--color-overlay)">
                                 {project.date && <span>{project.date}</span>}
                             </p>
 
                         </div>
 
                         {/* Description */}
-                        <div className="card-dark rounded-xl p-5 shadow-lg">
-                            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-bg-3)]">
+                        <div className="card rounded-xl p-5 shadow-lg">
+                            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider (--color-overlay)">
                                 Description
                             </h3>
                             <div className="flex items-center gap-3">
@@ -133,15 +133,15 @@ export default async function ProjectPage({
 
                         {/* Tags */}
                         {project.tags && project.tags.length > 0 && (
-                            <div className="card-dark rounded-xl p-5 shadow-lg">
-                                <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-bg-3)]">
+                            <div className="card rounded-xl p-5 shadow-lg">
+                                <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider (--color-overlay)">
                                     Tags
                                 </h3>
                                 <div className="flex flex-wrap gap-1.5">
                                     {project.tags.map((tag) => (
                                         <span
                                             key={tag}
-                                            className="rounded-full bg-[var(--color-bg-2)] px-2.5 py-1 text-xs text-[var(--color-text-light)]"
+                                            className="rounded-full bg-(--color-overlay) px-2.5 py-1 text-xs text-(--color-text)"
                                         >
                                             {tag}
                                         </span>
@@ -152,15 +152,15 @@ export default async function ProjectPage({
 
                         {/* Software */}
                         {project.software && project.software.length > 0 && (
-                            <div className="card-dark rounded-xl p-5 shadow-lg">
-                                <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-bg-3)]">
+                            <div className="card rounded-xl p-5 shadow-lg">
+                                <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider (--color-overlay)">
                                     Software
                                 </h3>
                                 <div className="flex flex-wrap gap-1.5">
                                     {project.software.map((sw) => (
                                         <span
                                             key={sw}
-                                            className="rounded-md bg-[var(--color-bg-2)] px-2.5 py-1 text-xs text-[var(--color-text-light)]"
+                                            className="rounded-md bg-(--color-overlay) px-2.5 py-1 text-xs text-(--color-text)"
                                         >
                                             {sw}
                                         </span>
@@ -170,16 +170,16 @@ export default async function ProjectPage({
                         )}
 
                         {/* Artist card — ArtStation shows the artist in the sidebar */}
-                        <div className="card-dark rounded-xl p-5 shadow-lg">
-                            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-bg-3)]">
+                        <div className="card rounded-xl p-5 shadow-lg">
+                            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider (--color-overlay)">
                                 Artist
                             </h3>
                             <div className="flex items-center gap-3">
                                 <div>
-                                    <p className="text-sm font-medium text-[var(--color-text-light)]">
+                                    <p className="text-sm font-medium text-(--color-text)">
                                         Maxine Meijboom
                                     </p>
-                                    <p className="text-xs text-[var(--color-bg-3)]">
+                                    <p className="text-xs (--color-overlay)">
                                         Software Developer & 3D Artist
                                     </p>
                                 </div>

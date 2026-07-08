@@ -21,12 +21,12 @@ const skills = {
 };
 
 const languages = [
-    { label: "🇳🇱 Dutch", color: "var(--color-success)" },
-    { label: "🇬🇧 English", color: "var(--color-success)" },
-    { label: "Frisian", color: "var(--color-lavender)" },
-    { label: "🇯🇵 Japanese", color: "var(--color-lavender)" },
-    { label: "🇩🇪 German", color: "var(--color-lavender)" },
-    { label: "🇨🇳 Mandarin", color: "var(--color-warning)" },
+    { label: "🇳🇱 Dutch", color: "var(--color-foam)" },
+    { label: "🇬🇧 English", color: "var(--color-foam)" },
+    { label: "Frisian", color: "var(--color-iris)" },
+    { label: "🇯🇵 Japanese", color: "var(--color-iris)" },
+    { label: "🇩🇪 German", color: "var(--color-iris)" },
+    { label: "🇨🇳 Mandarin", color: "var(--color-gold)" },
 ];
 
 export default function Home() {
@@ -42,10 +42,10 @@ export default function Home() {
 
     return (
         <div
-            className="min-h-screen"
+            className="pine-forest-bg min-h-screen"
             style={{
-                backgroundColor: "var(--color-bg-darker)",
-                backgroundImage: "url('/images/pine-forest.svg')",
+                /*backgroundColor: "var(--color-background)",*/
+                /*backgroundImage: "url('/images/pine-forest.svg')",*/
                 backgroundSize: "cover",
                 backgroundAttachment: "fixed",
                 backgroundRepeat: "no-repeat",
@@ -66,7 +66,7 @@ export default function Home() {
                 {/* Hero content */}
                 <div className="relative z-10 flex flex-col items-center gap-4">
                     {/* Avatar */}
-                    <div className="h-36 w-36 overflow-hidden rounded-full border-2 border-[var(--color-bg-3)]/30 shadow-lg">
+                    <div className="h-36 w-36 overflow-hidden rounded-full border-2 border-(--color-overlay)/30 shadow-lg">
                         <Image
                             src="/images/profile_icon.jpg"
                             alt="Profile-Icon"
@@ -86,8 +86,8 @@ export default function Home() {
 
                     {/* Role badge */}
                     <p
-                        className="inline-block rounded px-3 py-2 text-base text-[var(--color-text-light)]"
-                        style={{ backgroundColor: "var(--color-bg-0)" }}
+                        className="inline-block rounded px-3 py-2 text-base text-(--color-text)"
+                        style={{ backgroundColor: "var(--color-base)" }}
                     >
                         Software Developer, Technical 3D Artist
                     </p>
@@ -96,13 +96,13 @@ export default function Home() {
                     <div className="flex flex-col gap-3 sm:flex-row">
                         <Link
                             href="/portfolio"
-                            className="rounded-lg bg-[var(--color-primary)] px-6 py-3 font-medium text-[var(--color-bg-0)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--color-light-green)] hover:shadow-lg"
+                            className="rounded-lg bg-(--color-rose) px-6 py-3 font-medium text-(--color-text) transition-all duration-300 hover:-translate-y-0.5 hover:bg-(--color-foam) hover:shadow-lg"
                         >
                             View My Work
                         </Link>
                         <Link
                             href="/contact"
-                            className="rounded-lg bg-[var(--color-primary)] px-6 py-3 font-medium text-[var(--color-bg-0)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--color-light-green)] hover:shadow-lg"
+                            className="rounded-lg bg-(--color-rose) px-6 py-3 font-medium text-(--color-text) transition-all duration-300 hover:-translate-y-0.5 hover:bg-(--color-foam) hover:shadow-lg"
                         >
                             Say Hello
                         </Link>
@@ -117,25 +117,25 @@ export default function Home() {
                 <section className="mt-10">
                     <div className="grid gap-6 md:grid-cols-2">
                         {/* Text card */}
-                        <div className="card-dark p-8">
-                            <h2 className="mb-4 text-xl font-semibold text-[var(--color-primary)]">
+                        <div className="card p-8">
+                            <h2 className="mb-4 text-xl font-semibold text-(--color-rose)">
                                 About Me
                             </h2>
-                            <p className="mb-3 text-base leading-relaxed text-[var(--color-text-light)]">
+                            <p className="mb-3 text-base leading-relaxed">
                                 Hi, I&apos;m Maxine, a software developer from the Netherlands
                                 with a huge passion for 3D graphics, rendering engines,
                                 mathematics and optimization.
                             </p>
-                            <p className="mb-3 text-sm leading-relaxed text-[var(--color-bg-4)]">
+                            <p className="mb-3 text-sm leading-relaxed">
                                 Currently studying Software Engineering at the Hanze University
                                 of Applied Science.
                             </p>
-                            <p className="mb-3 text-sm leading-relaxed text-[var(--color-bg-4)]">
+                            <p className="mb-3 text-sm leading-relaxed text-(--color-subtle)">
                                 Having started as a freelancer in 3D game art and moving more
                                 towards programming as time goes on, I see myself as a software
                                 engineer who can bridge gaps between art and code.
                             </p>
-                            <p className="text-sm leading-relaxed text-[var(--color-bg-4)]">
+                            <p className="text-sm leading-relaxed text-(--color-subtle)">
                                 Or simply put.. When artists and designers come up with crazy
                                 impossible ideas, I come up with crazy implementations to make
                                 it possible!
@@ -144,20 +144,20 @@ export default function Home() {
                             {/* Hobbies & Interests */}
                             <div className="mt-6 grid grid-cols-2 gap-4">
                                 <div>
-                                    <h6 className="mb-2 text-xs font-semibold text-[var(--color-bg-3)]">
+                                    <h6 className="mb-2 text-xs font-semibold (--color-overlay)">
                                         🎮 Hobbies
                                     </h6>
-                                    <ul className="space-y-1 text-sm text-[var(--color-text-light)]">
+                                    <ul className="space-y-1 text-sm text-(--color-text)">
                                         <li>Gaming</li>
                                         <li>3D Sculpting &amp; Texturing</li>
                                         <li>Swimming</li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <h6 className="mb-2 text-xs font-semibold text-[var(--color-bg-3)]">
+                                    <h6 className="mb-2 text-xs font-semibold (--color-overlay)">
                                         🎵 Interests
                                     </h6>
-                                    <ul className="space-y-1 text-sm text-[var(--color-text-light)]">
+                                    <ul className="space-y-1 text-sm text-(--color-text)">
                                         <li>Animation &amp; Anime</li>
                                         <li>Coffee</li>
                                     </ul>
@@ -166,14 +166,14 @@ export default function Home() {
 
                             {/* Languages */}
                             <div className="mt-6">
-                                <h6 className="mb-2 text-xs font-semibold text-[var(--color-bg-3)]">
+                                <h6 className="mb-2 text-xs font-semibold (--color-overlay)">
                                     🔠 Languages
                                 </h6>
                                 <div className="flex flex-wrap gap-2">
                                     {languages.map((lang) => (
                                         <span
                                             key={lang.label}
-                                            className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium text-[var(--color-bg-0)]"
+                                            className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium text-(--color-highlight-low)"
                                             style={{ backgroundColor: lang.color }}
                                         >
                                             {lang.label}
@@ -199,10 +199,10 @@ export default function Home() {
                 {/* ===== Featured Projects Section ===== */}
                 <section className="mt-12">
                     <div className="mb-6 text-center">
-                        <h2 className="mb-2 text-2xl font-bold text-[var(--color-primary)]">
+                        <h2 className="mb-2 text-2xl font-bold text-(--color-rose)">
                             Latest Work
                         </h2>
-                        <h4 className="text-sm text-[var(--color-bg-3)]">
+                        <h4 className="text-sm (--color-overlay)">
                             Featured Projects
                         </h4>
                     </div>
@@ -220,7 +220,7 @@ export default function Home() {
                     <div className="mt-4 text-center">
                         <Link
                             href="/portfolio"
-                            className="inline-block rounded-lg bg-[var(--color-primary)] px-6 py-3 font-medium text-[var(--color-bg-0)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--color-light-green)] hover:shadow-lg"
+                            className="inline-block rounded-lg bg-(--color-rose) px-6 py-3 font-medium text-(--color-text) transition-all duration-300 hover:-translate-y-0.5 hover:bg---color-foam) hover:shadow-lg"
                         >
                             {"<"} View All Projects {">"}
                         </Link>
@@ -230,18 +230,18 @@ export default function Home() {
                 {/* ===== Latest Blogs Section ===== */}
                 <section className="mt-12">
                     <div className="mb-6 text-center">
-                        <h2 className="mb-2 text-2xl font-bold text-[var(--color-primary)]">
+                        <h2 className="mb-2 text-2xl font-bold text-(--color-rose)">
                             Latest Blogs
                         </h2>
                     </div>
 
                     <div className="flex flex-col gap-4">
                         {/* Placeholder — replace with blog parser when ready */}
-                        <div className="card-dark p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                            <h5 className="mb-2 font-medium text-[var(--color-primary)]">
+                        <div className="card p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                            <h5 className="mb-2 font-medium text-(--color-rose)">
                                 Blog posts coming soon
                             </h5>
-                            <p className="mb-3 text-sm text-[var(--color-bg-3)]">
+                            <p className="mb-3 text-sm (--color-overlay)">
                                 I&apos;m working on writing about what I learn. Check back soon!
                             </p>
                         </div>
@@ -250,7 +250,7 @@ export default function Home() {
                     <div className="mt-4 text-center">
                         <Link
                             href="/blog"
-                            className="inline-block rounded-lg bg-[var(--color-primary)] px-6 py-3 font-medium text-[var(--color-bg-0)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--color-light-green)] hover:shadow-lg"
+                            className="inline-block rounded-lg bg-(--color-rose) px-6 py-3 font-medium text-(--color-text) transition-all duration-300 hover:-translate-y-0.5 hover:bg-(--color-foam) hover:shadow-lg"
                         >
                             {"<"} View All Blog Posts {">"}
                         </Link>
@@ -260,10 +260,10 @@ export default function Home() {
                 {/* ===== Skills Section ===== */}
                 <section className="mt-12">
                     <div className="mb-6 text-center">
-                        <h2 className="mb-2 text-2xl font-bold text-[var(--color-primary)]">
+                        <h2 className="mb-2 text-2xl font-bold text-(--color-rose)">
                             Skills
                         </h2>
-                        <h4 className="text-sm text-[var(--color-bg-3)]">
+                        <h4 className="text-sm text-(--color-subtle)">
                             Tools and technologies I work with
                         </h4>
                     </div>
@@ -272,16 +272,15 @@ export default function Home() {
                         {Object.entries(skills).map(([category, items]) => (
                             <div
                                 key={category}
-                                className="card-dark p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                            >
-                                <h5 className="mb-3 font-medium text-[var(--color-primary)]">
+                                className="card p-5 shadow-md transition-all duration-300">
+                                <h5 className="mb-3 font-medium text-(--color-rose)">
                                     {category}
                                 </h5>
                                 <div className="flex flex-wrap gap-2">
                                     {items.map((skill) => (
                                         <span
                                             key={skill}
-                                            className="rounded-full bg-[var(--color-bg-2)] px-3 py-1 text-xs font-medium text-[var(--color-text-light)]"
+                                            className="rounded-full bg-(--color-surface) px-3 py-1 text-xs font-medium text-(--color-text)"
                                         >
                                             {skill}
                                         </span>

@@ -18,7 +18,7 @@ export default function ProjectCard({
     return (
         <Link
             href={`/portfolio/${project.slug}`}
-            className="card-dark block overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            className="card block overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
         >
             {/* Thumbnail — square */}
             <div className="relative aspect-square w-full overflow-hidden">
@@ -32,7 +32,7 @@ export default function ProjectCard({
 
                 {/* Featured badge */}
                 {showFeaturedBadge && project.featured && (
-                    <span className="absolute right-2 top-2 rounded-full bg-(--color-yellow) px-2.5 py-1 text-xs font-semibold text-(--color-bg-0) shadow-md">
+                    <span className="absolute right-2 top-2 rounded-full bg-(--color-gold) px-2.5 py-1 text-xs font-semibold text-(--color-text) shadow-md">
             ★ Featured
           </span>
                 )}
@@ -40,13 +40,13 @@ export default function ProjectCard({
 
             {/* Info */}
             <div className="p-4">
-                <h5 className="mb-2 font-medium text-(--color-text-light)">
+                <h5 className="mb-2 font-medium text-(--color-text)">
                     {project.title}
                 </h5>
 
-                {/* Meta line: role · duration · date */}
+                {/* Date */}
                 {(project.date) && (
-                    <p className="mb-2 text-xs text-(--color-bg-3)">
+                    <p className="mb-2 text-xs text-(--color-subtle)">
                         {project.date && <span>{project.date}</span>}
                     </p>
                 )}
@@ -57,13 +57,13 @@ export default function ProjectCard({
                         {project.tags.slice(0, maxTags).map((tag) => (
                             <span
                                 key={tag}
-                                className="rounded-full bg-(--color-lavender) px-2 py-0.5 text-xs font-medium text-(--color-bg-0)"
+                                className="rounded-full bg-(--color-pine) px-2 py-0.5 text-xs font-medium text-(--override-base-color-text)"
                             >
                 {tag}
               </span>
                         ))}
                         {project.tags.length > maxTags && (
-                            <span className="px-1 text-xs text-(--color-bg-3)">
+                            <span className="px-1 text-xs text-(--color-foam)">
                 +{project.tags.length - maxTags}
               </span>
                         )}

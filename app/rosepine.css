@@ -1,45 +1,147 @@
-/* CSS Custom Properties for consistent theming */
+/* Rosepine CSS file based on: */
+/* https://rosepinetheme.com/palette/ */
+
+/* ----- Default! Rose Pine ----- */
+/* from rosepinetheme.com/palette */
 :root {
-    /* Core Colors */
-    --color-primary: #EBBCB9; /* main color */
-    --color-secondary: #30748F; /* accent */
-    --color-pink: #EC6F92;
-    --color-coral: #925B79; /* from BubblesRT render banner image */
-    --color-yellow: #F5C178;
-    --color-light-green: #9DCFD9;
-    --color-lavender: #C4A7E7;
+    /* Backgrounds */
+    --color-base:           #191724;
+    --color-surface:        #1f1d2e;
+    --color-overlay:        #26233a;
+    /* Useful */
+    --color-muted:          #6e6a86;
+    --color-subtle:         #908caa;
+    --color-text:           #e0def4;
+    /* Core colours */
+    --color-love:           #eb6f92;
+    --color-gold:           #f6c177;
+    --color-rose:           #ebbcba;
+    --color-pine:           #31748f;
+    --color-foam:           #9ccfd8;
+    --color-iris:           #c4a7e7;
+    /* Highlights */
+    --color-highlight-low:  #21202e;
+    --color-highlight-med:  #403d52;
+    --color-highlight-high: #524f67;
+    /* Extra additions */
+    --color-background:     #15131d;
+}
 
+/* ------- Rose Pine Moon ------- */
+/* from rosepinetheme.com/palette */
+[data-theme="moon"] {
+    /* Backgrounds */
+    --color-base:           #232136;
+    --color-surface:        #2a273f;
+    --color-overlay:        #393552;
+    /* Useful */
+    --color-muted:          #6e6a86;
+    --color-subtle:         #908caa;
+    --color-text:           #e0def4;
+    /* Core colours */
+    --color-love:           #eb6f92;
+    --color-gold:           #f6c177;
+    --color-rose:           #ea9a97;
+    --color-pine:           #3e8fb0;
+    --color-foam:           #9ccfd8;
+    --color-iris:           #c4a7e7;
+    /* Highlights */
+    --color-highlight-low:  #2a283e;
+    --color-highlight-med:  #44415a;
+    --color-highlight-high: #56526e;
+    /* Extra additions */
+    --color-background:     #191724;
+}
 
-    /* Background Colors */
-    --color-bg-0: #1A1824;
-    --color-bg-1: #1F1D2E;
-    --color-bg-2: #26223B;
-    --color-bg-3: #6F6E85;
-    --color-bg-4: #DFDEF3;
-    --color-bg-dark: var(--color-bg-0); /* Near-black */
-    --color-bg-darker: #15131D;
-    --color-bg: var(--color-bg-2); /* Default dark colour */
-    --color-bg-default: var(--color-bg-2); /* Default dark colour */
-    --color-bg-gray: var(--color-bg-3); /* Gray colour */
-    --color-bg-light: var(--color-bg-4); /* White-ish colour */
-    --color-bg-terminal: var(--color-bg-0); /* terminal colour  */
+/* ------- Rose Pine Dawn ------- */
+/* from rosepinetheme.com/palette */
+[data-theme="dawn"] {
 
-    /* Text Colors */
-    --color-text-light: var(--color-bg-4);
-    --color-text-dark: var(--color-bg-0);
+    /* Backgrounds */
+    --color-base:           #faf4ed;
+    --color-surface:        #fffaf3;
+    --color-overlay:        #f2e9e1;
+    /* Useful */
+    --color-muted:          #9893a5;
+    --color-subtle:         #797593;
+    --color-text:           #464261;
+    /* Core colours */
+    --color-love:           #b4637a;
+    --color-gold:           #ea9d34;
+    --color-rose:           #d7827e;
+    --color-pine:           #286983;
+    --color-foam:           #56949f;
+    --color-iris:           #907aa9;
+    /* Highlights */
+    --color-highlight-low:  #f4ede8;
+    --color-highlight-med:  #dfdad9;
+    --color-highlight-high: #cecacd;
+    /* Extra additions */
+    --color-background:     #fcf8f4;
+}
 
-    /* Semantic Colors */
-    --color-success: var(--color-light-green);
-    --color-warning: var(--color-yellow);
-    --color-danger: var(--color-pink);
-    --color-info: var(--color-lavender);
+/* -- Overrides -- */
+:root {
+    /* Backgrounds */
+    --override-base-color-base:           #191724;
+    --override-moon-color-base:           #232136;
+    --override-dawn-color-base:           #faf4ed;
+    --override-base-color-surface:        #1f1d2e;
+    --override-moon-color-surface:        #2a273f;
+    --override-dawn-color-surface:        #fffaf3;
+    --override-base-color-overlay:        #26233a;
+    --override-moon-color-overlay:        #393552;
+    --override-dawn-color-overlay:        #f2e9e1;
+    /* Useful */
+    --override-base-color-muted:          #6e6a86;
+    --override-moon-color-muted:          #6e6a86;
+    --override-dawn-color-muted:          #9893a5;
+    --override-base-color-subtle:         #908caa;
+    --override-moon-color-subtle:         #908caa;
+    --override-dawn-color-subtle:         #797593;
+    --override-base-color-text:           #e0def4;
+    --override-moon-color-text:           #e0def4;
+    --override-dawn-color-text:           #464261;
+    /* Core colours */
+    --override-base-color-love:           #eb6f92;
+    --override-moon-color-love:           #eb6f92;
+    --override-dawn-color-love:           #b4637a;
+    --override-base-color-gold:           #f6c177;
+    --override-moon-color-gold:           #f6c177;
+    --override-dawn-color-gold:           #ea9d34;
+    --override-base-color-rose:           #ebbcba;
+    --override-moon-color-rose:           #ea9a97;
+    --override-dawn-color-rose:           #d7827e;
+    --override-base-color-pine:           #31748f;
+    --override-moon-color-pine:           #3e8fb0;
+    --override-dawn-color-pine:           #286983;
+    --override-base-color-foam:           #9ccfd8;
+    --override-moon-color-foam:           #9ccfd8;
+    --override-dawn-color-foam:           #56949f;
+    --override-base-color-iris:           #c4a7e7;
+    --override-moon-color-iris:           #c4a7e7;
+    --override-dawn-color-iris:           #907aa9;
+    /* Highlights */
+    --override-base-color-highlight-low:  #21202e;
+    --override-moon-color-highlight-low:  #2a283e;
+    --override-dawn-color-highlight-low:  #f4ede8;
+    --override-base-color-highlight-med:  #403d52;
+    --override-moon-color-highlight-med:  #44415a;
+    --override-dawn-color-highlight-med:  #dfdad9;
+    --override-base-color-highlight-high: #524f67;
+    --override-moon-color-highlight-high: #56526e;
+    --override-dawn-color-highlight-high: #cecacd;
+    /* Extra additions */
+    --override-base-color-background:     #15131d;
+    --override-moon-color-background:     #191724;
+    --override-dawn-color-background:     #fcf8f4;
 }
 
 /* ===== Terminal / Typewriter ===== */
 .terminal {
     font-family: "Source Code Pro", "Courier New", monospace;
-    color: var(--color-light-green);
-    background-color: var(--color-bg-terminal);
+    color: var(--override-moon-color-foam);
+    background-color: var(--override-base-color-background);
     padding: 20px;
     border-radius: 8px;
     overflow: hidden;
@@ -49,7 +151,7 @@
 
 .typewriter {
     overflow: hidden;
-    border-right: .15em solid var(--color-light-green);
+    border-right: .15em solid var(--override-moon-color-foam);
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: .05em;
@@ -65,39 +167,72 @@
 
 @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: var(--color-text-light); }
-}
-
-
-/* ===== Card styles ===== */
-.card-dark {
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-light);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-dark:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.card-light {
-    background-color: var(--color-bg-light);
-    color: var(--color-text-dark);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-light:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    50% { border-color: var(--override-moon-color-text); }
 }
 
 /* ===== Terminal text color utility ===== */
 .text-terminal {
-    color: var(--color-light-green);
+    color: var(--override-moon-color-foam);
 }
 .bg-terminal {
-    background-color: var(--color-bg-terminal);
+    background-color: var(--override-base-color-background);
+}
+
+
+/* ===== Pine forest background — theme-aware ===== */
+.pine-forest-bg {
+    /*transition: image 0.8s ease;*/
+}
+
+/* Base — no filter, SVG as-is */
+[data-theme="base"] .pine-forest-bg {
+    background-image: url("../public/images/pine-forest.svg");
+    background-color: var(--color-background);
+}
+
+/* Moon — slightly softer/lighter */
+[data-theme="moon"] .pine-forest-bg {
+    background-image: url("../public/images/pine-forest.svg");
+    background-color: var(--color-background);
+}
+
+/* Dawn — significantly lighter for light theme readability */
+[data-theme="dawn"] .pine-forest-bg {
+    background-image: url("../public/images/pine-forest-dawn.svg");
+    background-color: var(--color-background);
+}
+
+
+/* ===== Card styles ===== */
+.card {
+    background-color: var(--color-base);
+    color: var(--color-text);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-light:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-light { /* Is always light, regardless of theming */
+    background-color: var(--override-dawn-color-base);
+    color: var(--override-dawn-color-text);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-light:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-dark { /* Is always dark, regardless of theming */
+    background-color: var(--override-base-color-base);
+    color: var(--override-base-color-text);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-dark:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }

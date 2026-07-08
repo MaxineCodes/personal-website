@@ -18,7 +18,16 @@ const cards = [
 
 export default function Home() {
   return (
-      <div className="min-h-screen bg-cover bg-fixed bg-no-repeat" style={{ backgroundImage: "url('/images/pine-forest.svg')" }}>
+      <div
+          className="pine-forest-bg min-h-screen"
+          style={{
+            /*backgroundColor: "var(--color-background)",*/
+            /*backgroundImage: "url('/images/pine-forest.svg')",*/
+            backgroundSize: "cover",
+            backgroundAttachment: "fixed",
+            backgroundRepeat: "no-repeat",
+      }}>
+
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
 
           {/* ===== Page Title ===== */}
