@@ -20,7 +20,7 @@ export default function PortfolioPage() {
                     <h1 className="text-3xl font-bold text-(--color-rose) sm:text-4xl">
                         Portfolio
                     </h1>
-                    <p className="mt-2 text-base text-(--color-overlay">
+                    <p className="mt-2 text-base text-(--color-muted)">
                         My projects and work
                     </p>
                 </div>

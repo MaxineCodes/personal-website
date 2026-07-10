@@ -32,7 +32,7 @@ export default function ProjectCard({
 
                 {/* Featured badge */}
                 {showFeaturedBadge && project.featured && (
-                    <span className="absolute right-2 top-2 rounded-full bg-(--color-gold) px-2.5 py-1 text-xs font-semibold text-(--color-text) shadow-md">
+                    <span className="absolute right-2 top-2 rounded-full bg-(--color-gold) px-2.5 py-1 text-xs font-semibold text-(--override-base-color-background) shadow-md">
             ★ Featured
           </span>
                 )}

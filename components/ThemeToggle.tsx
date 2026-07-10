@@ -35,7 +35,7 @@ export default function ThemeToggle() {
 
     if (!mounted) {
         return (
-            <button className="rounded-md p-2 text-[var(--color-text-light)]" aria-label="Theme">
+            <button className="rounded-md p-2 text-(--color-text-light)" aria-label="Theme">
                 <span className="block h-5 w-5" />
             </button>
         );
@@ -45,7 +45,7 @@ export default function ThemeToggle() {
 
     return (
         <div className="relative">
-            {/* Toggle button — shows current theme icon */}
+            {/* Toggle button */}
             <button
                 onClick={() => setOpen(!open)}
                 className="rounded-md p-2 text-(--color-text) transition-colors hover:bg-(--color-surface)/50 hover:text-(--color-rose)"

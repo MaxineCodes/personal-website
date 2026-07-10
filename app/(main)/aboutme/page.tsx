@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllProjects } from "@/libraries/projectParser";
 import ProjectCard from "@/components/ProjectCard";
+import Button from "@/components/Button";
 
 const skills = {
     "Development": [
@@ -41,15 +42,10 @@ export default function Home() {
         : allProjects.slice(0, 48);
 
     return (
-        <div
-            className="pine-forest-bg min-h-screen"
-            style={{
-                /*backgroundColor: "var(--color-background)",*/
-                /*backgroundImage: "url('/images/pine-forest.svg')",*/
-                backgroundSize: "cover",
-                backgroundAttachment: "fixed",
-                backgroundRepeat: "no-repeat",
-        }}>
+
+        /* Pine-Forest Wallpaper */
+        <div className="pine-forest-bg min-h-screen">
+
             {/* ===== Hero / Full-Width Banner Section ===== */}
             <section className="relative flex min-h-[500px] w-screen flex-col items-center justify-center gap-6 overflow-hidden px-4 py-16 text-center">
                 {/* Banner background */}
@@ -84,28 +80,18 @@ export default function Home() {
                         </h1>
                     </div>
 
-                    {/* Role badge */}
+                    {/* Title badge */}
                     <p
-                        className="inline-block rounded px-3 py-2 text-base text-(--color-text)"
-                        style={{ backgroundColor: "var(--color-base)" }}
+                        className="inline-block rounded px-3 py-2 text-base text-(--override-base-color-text)"
+                        style={{ backgroundColor: "var(--override-base-color-base)" }}
                     >
                         Software Developer, Technical 3D Artist
                     </p>
 
-                    {/* CTA buttons */}
+                    {/* buttons */}
                     <div className="flex flex-col gap-3 sm:flex-row">
-                        <Link
-                            href="/portfolio"
-                            className="rounded-lg bg-(--color-rose) px-6 py-3 font-medium text-(--color-text) transition-all duration-300 hover:-translate-y-0.5 hover:bg-(--color-foam) hover:shadow-lg"
-                        >
-                            View My Work
-                        </Link>
-                        <Link
-                            href="/contact"
-                            className="rounded-lg bg-(--color-rose) px-6 py-3 font-medium text-(--color-text) transition-all duration-300 hover:-translate-y-0.5 hover:bg-(--color-foam) hover:shadow-lg"
-                        >
-                            Say Hello
-                        </Link>
+                        <Button text={"View My Work"} href={"/portfolio"} variant={"bold"}/>
+                        <Button text={"Say Hello"} href={"/contact"} variant={"disabled"}/>
                     </div>
                 </div>
             </section>
@@ -217,14 +203,7 @@ export default function Home() {
                         ))}
                     </div>
 
-                    <div className="mt-4 text-center">
-                        <Link
-                            href="/portfolio"
-                            className="inline-block rounded-lg bg-(--color-rose) px-6 py-3 font-medium text-(--color-text) transition-all duration-300 hover:-translate-y-0.5 hover:bg---color-foam) hover:shadow-lg"
-                        >
-                            {"<"} View All Projects {">"}
-                        </Link>
-                    </div>
+                    <Button text={"View All Projects"} href={"/portfolio"}/>
                 </section>
 
                 {/* ===== Latest Blogs Section ===== */}
@@ -247,14 +226,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="mt-4 text-center">
-                        <Link
-                            href="/blog"
-                            className="inline-block rounded-lg bg-(--color-rose) px-6 py-3 font-medium text-(--color-text) transition-all duration-300 hover:-translate-y-0.5 hover:bg-(--color-foam) hover:shadow-lg"
-                        >
-                            {"<"} View All Blog Posts {">"}
-                        </Link>
-                    </div>
+                    <Button text={"View all blogs!"} href={""} variant={"disabled"}/>
                 </section>
 
                 {/* ===== Skills Section ===== */}

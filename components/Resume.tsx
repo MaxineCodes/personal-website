@@ -1,0 +1,183 @@
+import Link from "next/link";
+
+const education = [
+    {
+        title: "Software Engineering, Hanze University of Applied Sciences",
+        period: "August 2025 - Present",
+        details: ["Expected Graduation: 2029"],
+        bullets: [
+            "This website was built with the skills I have learned here. It's pretty great, I love learning.",
+            "Currently a first year student. :)",
+        ],
+    },
+];
+
+const experience = [
+    {
+        title: "Unity Developer VR Graphics | SAVR B.V.",
+        period: "Sep 2023 - Mar 2024",
+        location: "Enschede, Overijssel, Netherlands",
+        bullets: [
+            "Implementing Oculus' built in VR tracking into the existing project.",
+            "Optimising the Unity project disk size, as well as starting development on a custom render pipeline, designed to increase performance on WebGL for desktop and mobile with custom-built shaders and rendering features.",
+        ],
+    },
+    {
+        title: "Pipeline Technical Director | Katuni Animation",
+        period: "August 2022 - Sep 2023",
+        location: "Amsterdam, North Holland, Netherlands",
+        bullets: [
+            'Working on the technical pipeline side for the animated movie "Panda Bear in Africa," a co-production with the Danish AFilms.',
+            "Responsibilities include:",
+            "Maintaining and updating an animation pipeline.",
+            "Setting up Shotgrid for animation film production.",
+            "Tool development in Autodesk Maya.",
+            "Writing and maintaining documentation.",
+        ],
+    },
+];
+
+const programmingSkills = [
+    "C/C++", "Java", "OpenGL", "GLSL/HLSL", "Python", "Lua",
+];
+
+const dccSkills = [
+    "ZBrush", "Blender", "Houdini", "Adobe Substance Suite",
+    "Adobe Photoshop", "Adobe Illustrator", "Unity", "Unreal Engine 4/5",
+];
+
+
+export default function Resume()
+{
+    return(
+        <div
+            className="card shadow-lg mx-auto max-w-4xl sm:px-6 pt-8 pb-8 mt-0"
+            style={{ backgroundColor: "var(--color-overlay)" }}>
+
+            {/* ===== Page Header ===== */}
+            <div className="mb-8 text-center">
+                <h1 className="text-3xl font-bold text-(--color-rose) sm:text-4xl">
+                    Resume
+                </h1>
+                <p className="mt-2 text-base text-(--color-muted)">
+                    My experience and qualifications
+                </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3">
+
+                {/* ===== Left Column ===== */}
+                <div className="flex flex-col gap-6 md:col-span-2">
+
+                    {/* Education Cards */}
+                    <div className="card-light p-6 shadow-lg">
+                        <h2 className="mb-4 text-xl font-semibold text-(--override-dawn-color-text)">
+                            Education
+                        </h2>
+                        {education.map((edu) => (
+                            <div key={edu.title}>
+                                <h3 className="text-base font-medium text-(--override-dawn-color-text)">
+                                    {edu.title}
+                                </h3>
+                                <p className="mb-1 text-sm (--override-dawn-color-overlay)">{edu.period}</p>
+                                {edu.details.map((d) => (
+                                    <p key={d} className="mb-3 text-sm (--override-dawn-color-overlay)">{d}</p>
+                                ))}
+                                {edu.bullets.map((b, i) => (
+                                    <p key={i} className="mb-1 text-sm text-(--override-dawn-color-text)">
+                                        {b}
+                                    </p>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Experience Cards */}
+                    <div className="card-light p-4 shadow-lg flex flex-col gap-2">
+                        <h2 className="text-xl font-semibold ">
+                            Experience
+                        </h2>
+                        {experience.map((job) => (
+                            <div key={job.title} className="card-light p-3 shadow-lg">
+                                <h3 className="text-base font-medium text-(--override-dawn-color-text)">
+                                    {job.title}
+                                </h3>
+                                <p className="mb-1 text-sm (--color-overlay)">{job.period}</p>
+                                <p className="mb-3 text-sm (--color-overlay)">{job.location}</p>
+                                {job.bullets.map((b, i) => (
+                                    <p key={i} className="mb-1 text-sm text-(--override-dawn-color-text)">
+                                        {b}
+                                    </p>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* ===== Right Column ===== */}
+                <div className="flex flex-col gap-6 md:col-span-1">
+
+                    {/* Skills Card */}
+                    <div className="card-light p-6 shadow-lg">
+                        <h2 className="mb-4 text-xl font-semibold text-(--override-dawn-color-text)">
+                            Skills
+                        </h2>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div>
+                                <h4 className="mb-1.5 text-xs font-semibold (--override-dawn-color-overlay)">
+                                    Programming
+                                </h4>
+                                <ul className="space-y-1 text-sm text-(--override-dawn-color-text)">
+                                    {programmingSkills.map((skill) => (
+                                        <li key={skill}>{skill}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 className="mb-1.5 text-xs font-semibold (--override-dawn-color-overlay)">
+                                    3D DCC
+                                </h4>
+                                <ul className="space-y-1 text-sm text-(--override-dawn-color-text)">
+                                    {dccSkills.map((skill) => (
+                                        <li key={skill}>{skill}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Contact Card */}
+                    <div className="card-light p-6 shadow-lg">
+                        <h2 className="mb-4 text-xl font-semibold text-(--override-dawn-color-text)">
+                            Contact
+                        </h2>
+                        <div className="space-y-1.5 text-sm text-(--override-dawn-color-text)">
+                            <p>
+                                <span className="(--override-dawn-color-overlay)">E-Mail: </span>
+                                contact@ItsMaxine.eu
+                            </p>
+                            <p>
+                                <span className="(--override-dawn-color-overlay)">LinkedIn: </span>
+                                <Link
+                                    href="https://www.linkedin.com/in/maxinemeijboom"
+                                    className="text-(--color-pine) transition-colors hover:text-(--color-foam)"
+                                >
+                                    linkedin.com/in/maxinemeijboom
+                                </Link>
+                            </p>
+                            <p>
+                                <span className="(--color-overlay)">Github: </span>
+                                <Link
+                                    href="https://github.com/MaxineCodes"
+                                    className="text-(--color-pine) transition-colors hover:text-(--color-foam)"
+                                >
+                                    github.com/maxinecodes
+                                </Link>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
