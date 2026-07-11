@@ -50,7 +50,7 @@
     --color-highlight-med:  #44415a;
     --color-highlight-high: #56526e;
     /* Extra additions */
-    --color-background:     #191724;
+    --color-background:     #1f1d2e;
 }
 
 /* ------- Rose Pine Dawn ------- */
@@ -133,7 +133,7 @@
     --override-dawn-color-highlight-high: #cecacd;
     /* Extra additions */
     --override-base-color-background:     #15131d;
-    --override-moon-color-background:     #191724;
+    --override-moon-color-background:     #1f1d2e;
     --override-dawn-color-background:     #fcf8f4;
 }
 
