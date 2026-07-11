@@ -6,9 +6,9 @@ thumbnail: "/projects/orith_thumbnail.png"
 description: "Orith, the Moth Mage. She uses fae magic from the realm of dreams to perplex her enemies."
 
 banner: ""
-tags: 
-software: 
-featured: true
+tags: ["Character", "3D Art"]
+software: ["Maya", "ZBrush", "3DCoat", "Photoshop"]
+featured: false
 ---
 
 Orith, the Moth Mage. She uses fae magic from the realm of dreams to perplex her enemies.

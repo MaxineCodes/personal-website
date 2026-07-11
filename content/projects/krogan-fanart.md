@@ -6,7 +6,7 @@ thumbnail: "/projects/krogan_thumbnail.png"
 description: "Zbrush sculpt, based on the Krogan, an alien species from the Mass Effect game universe. "
 
 banner: ""
-tags: 
+tags: ["Sculpting", "Character", "3D Art"]
 software: ["ZBrush"]
 featured: false
 ---
