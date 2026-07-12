@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Resume from "@/components/Resume";
+import Spacer from "@/components/Spacer";
 
 export const metadata: Metadata = {
     title: "Resume Maxine Meijboom",
@@ -11,8 +12,12 @@ export default function ResumePage() {
     return (
         /* Pine-Forest Wallpaper */
         <div className="pine-forest-bg min-h-screen">
+
             {/* Resume from components/resume.tsx */}
             <Resume/>
+
+            {/* Spacer */}
+            <Spacer/>
         </div>
     );
 }

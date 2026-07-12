@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getAllProjects } from "@/libraries/projectParser";
 import ProjectCard from "@/components/ProjectCard";
 import Button from "@/components/Button";
+import Spacer from "@/components/Spacer";
 
 const skills = {
     "Development": [
@@ -262,6 +263,9 @@ export default function Home() {
                         ))}
                     </div>
                 </section>
+
+                {/* ===== Spacer ===== */}
+                <Spacer/>
             </div>
         </div>
     );
