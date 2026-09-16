@@ -97,10 +97,10 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ===== Content sections below the banner ===== */}
+            {/* Content sections below the banner */}
             <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
 
-                {/* ===== About Me Section ===== */}
+                {/* About Me Section */}
                 <section className="mt-10">
                     <div className="grid gap-6 md:grid-cols-2">
                         {/* Text card */}
@@ -183,7 +183,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* ===== Featured Projects Section ===== */}
+                {/* Featured Projects Section */}
                 <section className="mt-12">
                     <div className="mb-6 text-center">
                         <h2 className="mb-2 text-2xl font-bold text-(--color-rose)">
@@ -207,7 +207,7 @@ export default function Home() {
                     <Button text={"View All Projects"} href={"/portfolio"}/>
                 </section>
 
-                {/* ===== Latest Blogs Section ===== */}
+                {/* Latest Blogs Section */}
                 <section className="mt-12">
                     <div className="mb-6 text-center">
                         <h2 className="mb-2 text-2xl font-bold text-(--color-rose)">
@@ -222,7 +222,7 @@ export default function Home() {
                                 Blog posts coming soon
                             </h5>
                             <p className="mb-3 text-sm (--color-overlay)">
-                                I&apos;m working on writing about what I learn. Check back soon!
+                                Work in progress...
                             </p>
                         </div>
                     </div>
@@ -230,7 +230,7 @@ export default function Home() {
                     <Button text={"View all blogs!"} href={""} variant={"disabled"}/>
                 </section>
 
-                {/* ===== Skills Section ===== */}
+                {/* Skills Section */}
                 <section className="mt-12">
                     <div className="mb-6 text-center">
                         <h2 className="mb-2 text-2xl font-bold text-(--color-rose)">
@@ -264,7 +264,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* ===== Spacer ===== */}
+                {/* Spacer */}
                 <Spacer/>
             </div>
         </div>
