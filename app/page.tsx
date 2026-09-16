@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Footer from "@/components/Footer";
 
 const cards = [
   {
@@ -30,23 +31,23 @@ export default function Home() {
 
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
 
-          {/* ===== Page Title ===== */}
+          {/* Title */}
           <div className="mb-12 text-center">
-            <h1 className="text-4xl font-bold text-[#E3D2D0] sm:text-5xl">
+            <h1 className="text-4xl font-bold text-[#ebbcba] sm:text-5xl">
               ItsMaxine.eu
             </h1>
-            <p className="mt-3 text-lg text-[#CCCFE3]">
+            <p className="mt-3 text-lg text-[#e0def4]">
               Software Developer · Technical 3D Artist · Student
             </p>
           </div>
 
-          {/* ===== 6 Large Image Buttons ===== */}
+          {/* Cards */}
           <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-2">
             {cards.map((card) => (
                 <Link
                     key={card.title}
                     href={card.href}
-                    className="group relative flex flex-col overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                    className="group relative flex flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-2xl"
                 >
                   {/* Image */}
                   <div className="relative h-156 w-full overflow-hidden">
@@ -58,12 +59,12 @@ export default function Home() {
                         sizes="(max-width: 768px) 100vw 50vw, 33vw"
                     />
                     {/* Gradient overlay for text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#221f2c]/90 via-[#221f2c]/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#191724]/90 via-[#221f2c]/30 to-transparent" />
                   </div>
 
                   {/* Text content*/}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <h2 className="mb-1.5 text-xl font-semibold text-[#FDFBF9] transition-colors group-hover:text-[#E3D2D0]">
+                    <h2 className="mb-1.5 text-xl font-semibold text-[#ebbcba] transition-colors group-hover:text-[#eb6f92]">
                       {card.title}
                     </h2>
                     <p className="text-sm leading-relaxed text-[#CCCFE3]">
@@ -74,6 +75,9 @@ export default function Home() {
             ))}
           </div>
         </div>
+
+        <Footer />
+
       </div>
   );
 }
