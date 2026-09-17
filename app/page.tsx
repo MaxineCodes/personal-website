@@ -12,11 +12,24 @@ const cards = [
     href: "/aboutme",
   },
   {
+      title: "Portfolio",
+      description: "My works over the years.",
+      image: "/images/portfolio_screenshot.png",
+      href: "/portfolio",
+  },
+  {
     title: "Digital Compendium",
     description: "A growing digital compendium of knowledge. General information, guides, tutorials and more.",
     image: "/images/placeholder.svg",
     href: "/compendium",
   },
+  {
+      title: "Tutorials",
+      description: "Currently just the 404 page.",
+      image: "/images/placeholder.svg",
+      href: "/404",
+  },
+
 ];
 
 export default function Home() {
@@ -32,7 +45,7 @@ export default function Home() {
             </nav>
         </header>
 
-        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
 
           {/* Title */}
           <div className="mb-12 text-center">
@@ -45,7 +58,7 @@ export default function Home() {
           </div>
 
           {/* Cards */}
-          <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-2">
+          <div className="grid gap-12 sm:grid-cols-1 lg:grid-cols-3">
             {cards.map((card) => (
                 <Link
                     key={card.title}
@@ -53,7 +66,7 @@ export default function Home() {
                     className="group relative flex flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-2xl"
                 >
                   {/* Image */}
-                  <div className="relative h-156 w-full overflow-hidden">
+                  <div className="relative h-94 w-full overflow-hidden">
                     <Image
                         src={card.image}
                         alt={card.title}
