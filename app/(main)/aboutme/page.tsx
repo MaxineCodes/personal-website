@@ -47,7 +47,7 @@ export default function Home() {
         /* Pine-Forest Wallpaper */
         <div className="pine-forest-bg min-h-screen">
 
-            {/* ===== Hero / Full-Width Banner Section ===== */}
+            {/* Hero / Full-Width Banner Section */}
             <section className="relative flex min-h-[500px] w-screen flex-col items-center justify-center gap-6 overflow-hidden px-4 py-16 text-center">
                 {/* Banner background */}
                 <div className="absolute inset-0 overflow-hidden">
@@ -91,8 +91,8 @@ export default function Home() {
 
                     {/* buttons */}
                     <div className="flex flex-col gap-3 sm:flex-row">
-                        <Button text={"View My Work"} href={"/portfolio"} variant={"bold"}/>
-                        <Button text={"Say Hello"} href={"/contact"} variant={"disabled"}/>
+                        <Button text={"View My Work"} href={"/portfolio"} variant={'default'}/>
+                        <Button text={"Say Hello"} href={"/contact"} variant={'default'}/>
                     </div>
                 </div>
             </section>
@@ -266,6 +266,7 @@ export default function Home() {
 
                 {/* Spacer */}
                 <Spacer/>
+
             </div>
         </div>
     );
