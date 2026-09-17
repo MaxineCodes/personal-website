@@ -9,7 +9,6 @@ const buttonVariant = {
 
 type ButtonProps = {
     text: string;
-    /** Use href for navigation, type="submit" for form submission */
     href?: string;
     type?: "button" | "submit";
     variant?: keyof typeof buttonVariant;
