@@ -33,8 +33,8 @@ export default function ProjectCard({
                 {/* Featured badge */}
                 {showFeaturedBadge && project.featured && (
                     <span className="absolute right-3 top-3 rounded-full bg-(--color-gold) px-2.5 py-1 text-xs font-semibold text-(--override-base-color-background) shadow-md">
-            ★ Featured
-          </span>
+                    ★ Featured
+                    </span>
                 )}
             </div>
 

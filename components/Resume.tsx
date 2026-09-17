@@ -35,12 +35,40 @@ const experience = [
             "Writing and maintaining documentation.",
         ],
     },
+    {
+        title: "Freelance 3D Character Artist | Maxine3D",
+        period: "Jul 2019 - Aug 2022",
+        location: "Netherlands",
+        bullets: [
+            "Working for a variety of international clients doing 3D modelling, sculpting & rendering characters, props, environments, and products for 3D printing, games, and marketing.",
+        ],
+    },
+    {
+        title: "3D & Concept Art Intern | Jamzone",
+        period: "Dec 2018 - Jan 2020",
+        location: "Leeuwarden, Friesland, Netherlands",
+        bullets: [
+            "Making art assets for the VR game Stressjam. With a focus on game GUI art, concept art, 3D modelling & texturing.\n" +
+            "\n" +
+            "At Jamzone I worked with a small but passionate team on a VR game that helps users increase their control over their stress levels. At Jamzone they combine technology like Virtual Reality and health monitoring equipment to help people in real ways.",
+        ],
+    },
+    {
+        title: "3D Designer | Béyonit",
+        period: "Sep 2018 - Oct 2018",
+        location: "Leeuwarden, Friesland, Netherlands",
+        bullets: [
+            "At this internship I worked on a very small team on a web-based car configurator to customize the tires and rims for a company selling custom car-wheel rims. I was responsible for optimizing 3D car models to run efficiently in a real-time 3D web environment. I also worked on a demo for this configurator in Unity which was shown off to the client.",
+        ],
+    },
 ];
 
+const GeneralSkills = [
+    "Software Development", "3D Modelling", "Graphics", "Scrum", "Version Control", "Test-Driven Development",
+];
 const programmingSkills = [
-    "C/C++", "Java", "OpenGL", "GLSL/HLSL", "Python", "Lua",
+    "C/C++", "Java", "OpenGL", "GLSL/HLSL", "Python", "Lua", "Git"
 ];
-
 const dccSkills = [
     "ZBrush", "Blender", "Houdini", "Adobe Substance Suite",
     "Adobe Photoshop", "Adobe Illustrator", "Unity", "Unreal Engine 4/5",
@@ -54,7 +82,7 @@ export default function Resume()
             className="card shadow-lg mx-auto max-w-4xl sm:px-6 pt-8 pb-8 mt-0"
             style={{ backgroundColor: "var(--color-overlay)" }}>
 
-            {/* ===== Page Header ===== */}
+            {/* Page Header */}
             <div className="mb-8 text-center">
                 <h1 className="text-3xl font-bold text-(--color-rose) sm:text-4xl">
                     Resume
@@ -66,7 +94,7 @@ export default function Resume()
 
             <div className="grid gap-6 md:grid-cols-3">
 
-                {/* ===== Left Column ===== */}
+                {/* Left Column */}
                 <div className="flex flex-col gap-6 md:col-span-2">
 
                     {/* Education Cards */}
@@ -114,37 +142,8 @@ export default function Resume()
                     </div>
                 </div>
 
-                {/* ===== Right Column ===== */}
+                {/* Right Column */}
                 <div className="flex flex-col gap-6 md:col-span-1">
-
-                    {/* Skills Card */}
-                    <div className="card-light p-6 shadow-lg">
-                        <h2 className="mb-4 text-xl font-semibold text-(--override-dawn-color-text)">
-                            Skills
-                        </h2>
-                        <div className="grid grid-cols-2 gap-4">
-                            <div>
-                                <h4 className="mb-1.5 text-xs font-semibold (--override-dawn-color-overlay)">
-                                    Programming
-                                </h4>
-                                <ul className="space-y-1 text-sm text-(--override-dawn-color-text)">
-                                    {programmingSkills.map((skill) => (
-                                        <li key={skill}>{skill}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 className="mb-1.5 text-xs font-semibold (--override-dawn-color-overlay)">
-                                    3D DCC
-                                </h4>
-                                <ul className="space-y-1 text-sm text-(--override-dawn-color-text)">
-                                    {dccSkills.map((skill) => (
-                                        <li key={skill}>{skill}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
 
                     {/* Contact Card */}
                     <div className="card-light p-6 shadow-lg">
@@ -176,6 +175,57 @@ export default function Resume()
                             </p>
                         </div>
                     </div>
+
+                    {/* Skills Card */}
+                    <div className="card-light p-6 shadow-lg">
+                        <h2 className="mb-4 text-xl font-semibold text-(--override-dawn-color-text)">
+                            Skills
+                        </h2>
+                        <div className="grid grid-cols-2 gap-4">
+
+                            {/* Left side */}
+                            <div>
+
+                                {/* General */}
+                                <h4 className="mb-1.5 text-xs font-semibold (--override-dawn-color-overlay)">
+                                    General
+                                </h4>
+                                <ul className="space-y-1 text-sm text-(--override-dawn-color-text)">
+                                    {GeneralSkills.map((skill) => (
+                                        <li key={skill}>{skill}</li>
+                                    ))}
+                                </ul>
+
+                                {/* Programming */}
+                                <h4 className="mb-1.5 mt-5.5 text-xs font-semibold (--override-dawn-color-overlay)">
+                                    Programming
+                                </h4>
+                                <ul className="space-y-1 text-sm text-(--override-dawn-color-text)">
+                                    {programmingSkills.map((skill) => (
+                                        <li key={skill}>{skill}</li>
+                                    ))}
+                                </ul>
+
+                            </div>
+
+                            {/* Right side */}
+                            <div>
+
+                                {/* 3D DCC */}
+                                <h4 className="mb-1.5 text-xs font-semibold (--override-dawn-color-overlay)">
+                                    3D DCC
+                                </h4>
+                                <ul className="space-y-1 text-sm text-(--override-dawn-color-text)">
+                                    {dccSkills.map((skill) => (
+                                        <li key={skill}>{skill}</li>
+                                    ))}
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
