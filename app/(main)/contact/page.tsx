@@ -67,7 +67,7 @@ export default function ContactPage() {
 
             <div className="mx-auto px-4 py-8 sm:px-6">
 
-                {/* ===== Page Header ===== */}
+                {/* Page Header */}
                 <div className="mb-4 text-center">
                     <h1 className="text-3xl font-bold text-(--color-rose) sm:text-4xl">
                         Contact
@@ -77,7 +77,7 @@ export default function ContactPage() {
                     </p>
                 </div>
 
-                {/* ===== Contact Form Section ===== */}
+                {/* Contact Form Section */}
                 <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
                     <section className="mt-0">
                         <div className="grid gap-6 md:grid-cols-2">
@@ -147,7 +147,7 @@ export default function ContactPage() {
                                 />
 
                                 <form onSubmit={handleSubmit} className="space-y-4">
-                                    {/* Honeypot field - hidden from humans, bots will fill it */}
+                                    {/* Honeypot field for bots*/}
                                     <input
                                         ref={honeypotRef}
                                         type="text"
@@ -228,7 +228,7 @@ export default function ContactPage() {
                                         <Button
                                             text={status === 'sending' ? 'Sending...' : 'Send Message'}
                                             href={undefined}
-                                            variant={'bold'}
+                                            variant={'disabled'}
                                             onClick={() => {}}
                                             disabled={status === 'sending' || !turnstileToken}
                                         />
@@ -248,14 +248,14 @@ export default function ContactPage() {
                         </div>
                     </section>
 
-                    {/* ===== Footer Navigation ===== */}
+                    {/* Footer Navigation */}
                     <section className="mt-8">
                         <div className="flex justify-center">
-                            <Button text={"Back to Home"} href={"/"} variant={'disabled'} />
+                            <Button text={"Back to Home"} href={"/"} />
                         </div>
                     </section>
 
-                    {/* ===== Spacer ===== */}
+                    {/* Spacer */}
                     <Spacer />
                 </div>
             </div>
