@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "@/components/Footer";
+import ThemeToggle from "@/components/ThemeToggle";
+
 
 const cards = [
   {
@@ -19,24 +21,25 @@ const cards = [
 
 export default function Home() {
   return (
-      <div
-          className="pine-forest-bg min-h-screen"
-          style={{
-            /*backgroundColor: "var(--color-background)",*/
-            /*backgroundImage: "url('/images/pine-forest.svg')",*/
-            backgroundSize: "cover",
-            backgroundAttachment: "fixed",
-            backgroundRepeat: "no-repeat",
-      }}>
+      /* Pine-Forest Wallpaper */
+      <div className="pine-forest-bg min-h-screen">
+
+        <header
+            className="sticky top-0 "
+            style={{ }}>
+            <nav className="mx-auto flex items-center justify-end px-4 py-3 sm:px-6 max-w-7xl">
+                <ThemeToggle />
+            </nav>
+        </header>
 
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
 
           {/* Title */}
           <div className="mb-12 text-center">
-            <h1 className="text-4xl font-bold text-[#ebbcba] sm:text-5xl">
+            <h1 className="text-4xl font-bold text-(--color-rose) sm:text-5xl">
               ItsMaxine.eu
             </h1>
-            <p className="mt-3 text-lg text-[#e0def4]">
+            <p className="mt-3 text-lg text-(--color-text)">
               Software Developer · Technical 3D Artist · Student
             </p>
           </div>
@@ -59,7 +62,7 @@ export default function Home() {
                         sizes="(max-width: 768px) 100vw 50vw, 33vw"
                     />
                     {/* Gradient overlay for text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#191724]/90 via-[#221f2c]/30 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-[#191724]/90 via-[#221f2c]/30 to-transparent" />
                   </div>
 
                   {/* Text content*/}
