@@ -32,21 +32,21 @@ export default function ProjectCard({
 
                 {/* Featured badge */}
                 {showFeaturedBadge && project.featured && (
-                    <span className="absolute right-2 top-2 rounded-full bg-(--color-gold) px-2.5 py-1 text-xs font-semibold text-(--override-base-color-background) shadow-md">
+                    <span className="absolute right-3 top-3 rounded-full bg-(--color-gold) px-2.5 py-1 text-xs font-semibold text-(--override-base-color-background) shadow-md">
             ★ Featured
           </span>
                 )}
             </div>
 
             {/* Info */}
-            <div className="p-4">
-                <h5 className="mb-2 font-medium text-(--color-text)">
+            <div className="p-1">
+                <h5 className="mb-1 font-medium text-(--color-text)">
                     {project.title}
                 </h5>
 
                 {/* Date */}
                 {(project.date) && (
-                    <p className="mb-2 text-xs text-(--color-subtle)">
+                    <p className="mb-1 text-xs text-(--color-subtle)">
                         {project.date && <span>{project.date}</span>}
                     </p>
                 )}

@@ -26,7 +26,7 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* Project grid */}
-                <div className="grid gap-6 sm:grid-cols-5 lg:grid-cols-4">
+                <div className="grid gap-2 sm:grid-cols-1 lg:grid-cols-5">
                     {projects.map((project: ProjectMeta) => (
                         <ProjectCard
                             key={project.slug}
