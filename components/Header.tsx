@@ -32,10 +32,10 @@ export default function Header() {
                 {/* Desktop nav */}
                 <div className="hidden gap-1 md:flex">
                     {navLinks.map((link) => {
-                        const isActive =
-                            link.href === "/"
+                        const isActive = pathname !== null &&
+                            (link.href === "/"
                                 ? pathname === "/"
-                                : pathname.startsWith(link.href);
+                                : pathname.startsWith(link.href));
 
                         return (
                             <Link
@@ -51,11 +51,12 @@ export default function Header() {
                             </Link>
                         );
                     })}
-
                 </div>
 
-                {/* Mobile hamburger button */}
+                {/* Theme Toggle */}
                 <ThemeToggle />
+
+                {/* Mobile hamburger button */}
                 <button
                     onClick={() => setMobileOpen(!mobileOpen)}
                     className="rounded-md p-2 text-(--color-text) transition-colors hover:bg-(--color-surface) md:hidden"
@@ -94,10 +95,10 @@ export default function Header() {
                         style={{ backgroundColor: "var(--color-bg-0)" }}
                     >
                         {navLinks.map((link) => {
-                            const isActive =
-                                link.href === "/"
+                            const isActive = pathname !== null &&
+                                (link.href === "/"
                                     ? pathname === "/"
-                                    : pathname.startsWith(link.href);
+                                    : pathname.startsWith(link.href));
 
                             return (
                                 <Link
