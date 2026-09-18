@@ -253,7 +253,8 @@ body {
 
 }
 /* Scroll */
-html { scroll-behavior: smooth; }
+/* html { scroll-behavior: smooth; }*/
+/* html { data-scroll-behavior: smooth; }*/
 
 
 
