@@ -1,5 +1,6 @@
 import {getAllCompendiumArticleSlugs, getCompendiumArticleBySlug} from "@/libraries/compendiumParser";
 import {notFound} from "next/navigation";
+import {Breadcrumb} from "@/components/compendium/Breadcrumb";
 
 export function generateStaticParams() {
     const slugs = getAllCompendiumArticleSlugs();
@@ -30,6 +31,9 @@ export default async function CompendiumPage({params,}:
                 backgroundSize: "20px 20px",
             }}>
             <div className="mx-auto max-w-[90vw] xl:max-w-[1600px] px-4 py-6 sm:px-6">
+
+                {/* Breadcrumb navigation */}
+                <Breadcrumb slug={slug} title={CompendiumArticle.title} />
 
                 {/* two-column layout */}
                 <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
