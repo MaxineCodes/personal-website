@@ -1,5 +1,5 @@
 import {getAllBlogposts, type BlogpostMeta, Blogpost} from "@/libraries/blogpostParser";
-import ProjectCard from "@/components/BlogpostCard";
+import BlogpostCard from "@/components/BlogpostCard";
 
 export default function BlogpostPage() {
     const blogposts = getAllBlogposts();
@@ -28,7 +28,7 @@ export default function BlogpostPage() {
                 {/* Blogposts grid */}
                 <div className="grid gap-2 sm:grid-cols-1 lg:grid-cols-1">
                     {blogposts.map((blogpost: BlogpostMeta) => (
-                        <ProjectCard
+                        <BlogpostCard
                             key={blogpost.slug}
                             blogpost={blogpost}
                             maxTags={3}

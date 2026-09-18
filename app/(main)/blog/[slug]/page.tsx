@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { getAllBlogpostSlugs, getBlogpostBySlug } from "@/libraries/blogpostParser";
 import type { Metadata } from "next";
