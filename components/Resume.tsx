@@ -80,14 +80,14 @@ export default function Resume()
     return(
         <div
             className="card shadow-lg mx-auto max-w-4xl sm:px-6 pt-8 pb-8 mt-0"
-            style={{ backgroundColor: "var(--color-overlay)" }}>
+            style={{ backgroundColor: "var(--override-dawn-color-overlay)" }}>
 
             {/* Page Header */}
             <div className="mb-8 text-center">
-                <h1 className="text-3xl font-bold text-(--color-rose) sm:text-4xl">
+                <h1 className="text-3xl font-bold text-(--override-dawn-color-rose) sm:text-4xl">
                     Resume
                 </h1>
-                <p className="mt-2 text-base text-(--color-muted)">
+                <p className="mt-2 text-base text-(--override-dawn-color-text)">
                     My experience and qualifications
                 </p>
             </div>

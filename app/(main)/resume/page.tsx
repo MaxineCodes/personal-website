@@ -13,11 +13,16 @@ export default function ResumePage() {
         /* Pine-Forest Wallpaper */
         <div className="pine-forest-bg min-h-screen">
 
-            {/* Resume from components/resume.tsx */}
-            <Resume/>
+            <div className="grid gap-6 lg:grid-cols-1">
+                <main className="gap-6">
+                    <div className="rounded-xl p-15 bg-transparent">
 
-            {/* Spacer */}
-            <Spacer/>
+                        {/* Resume from components/resume.tsx */}
+                        <Resume/>
+
+                    </div>
+                </main>
+            </div>
         </div>
     );
 }

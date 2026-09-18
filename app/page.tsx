@@ -20,7 +20,7 @@ const cards = [
   {
     title: "Digital Compendium",
     description: "A growing digital compendium of knowledge. General information, guides, tutorials and more.",
-    image: "/images/placeholder.svg",
+    image: "/images/compendium.svg",
     href: "/compendium",
   },
   {

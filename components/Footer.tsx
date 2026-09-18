@@ -57,7 +57,7 @@ export default function Footer() {
                         <Link
                             href="/compendium"
                             className="transition-colors hover:text-(--color-rose)">
-                            Currently Unavailable
+                            Work in Progress
                         </Link>
                     </nav>
 
