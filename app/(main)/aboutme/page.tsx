@@ -4,6 +4,8 @@ import { getAllProjects } from "@/libraries/projectParser";
 import ProjectCard from "@/components/ProjectCard";
 import Button from "@/components/Button";
 import Spacer from "@/components/Spacer";
+import {getAllBlogposts} from "@/libraries/blogpostParser";
+import BlogpostCard from "@/components/BlogpostCard";
 
 const skills = {
     "Development": [
@@ -40,7 +42,17 @@ export default function Home() {
     // Fallback: if no featured projects, show the 3 most recent
     const projectsToShow = featuredProjects.length > 0
         ? featuredProjects
-        : allProjects.slice(0, 48);
+        : allProjects.slice(0, 3);
+
+    // Get featured blogs from .md files
+    const allBlogposts = getAllBlogposts();
+    const featuredBlogposts = allBlogposts
+        .filter((p) => p.featured)
+        .slice(0, 3);
+    // Fallback: if no featured projects, show the 3 most recent
+    const blogpostsToShow = featuredBlogposts.length > 0
+        ? featuredBlogposts
+        : allBlogposts.slice(0, 3);
 
     return (
 
@@ -215,19 +227,17 @@ export default function Home() {
                         </h2>
                     </div>
 
-                    <div className="flex flex-col gap-4">
-                        {/* Placeholder — replace with blog parser when ready */}
-                        <div className="card p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                            <h5 className="mb-2 font-medium text-(--color-rose)">
-                                Blog posts coming soon
-                            </h5>
-                            <p className="mb-3 text-sm (--color-overlay)">
-                                Work in progress...
-                            </p>
-                        </div>
+                    <div className="grid gap-4 sm:grid-cols-1 smx:grid-rows-3">
+                        {blogpostsToShow.map((blogpost) => (
+                            <BlogpostCard
+                                key={blogpost.slug}
+                                blogpost={blogpost}
+                                maxTags={2}
+                            />
+                        ))}
                     </div>
 
-                    <Button text={"View all blogs!"} href={""} variant={"disabled"}/>
+                    <Button text={"View all blogs!"} href={"/blog"} variant={"default"}/>
                 </section>
 
                 {/* Skills Section */}

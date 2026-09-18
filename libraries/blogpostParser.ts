@@ -14,7 +14,7 @@ import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 
 
-const projectsDirectory = path.join(process.cwd(), "content", "projects");
+const blogpostsDirectory = path.join(process.cwd(), "content", "blogs");
 const markdownProcessor = unified()
     .use(remarkParse)
     .use(remarkFrontmatter)
@@ -28,35 +28,32 @@ const markdownProcessor = unified()
     .use(rehypeStringify);
 
 
-export interface ProjectMeta {
+export interface BlogpostMeta {
     slug: string;
     title: string;
     date: string;
-    thumbnail: string;
     description: string;
-    banner?: string;
     tags?: string[];
-    software?: string[];
     featured?: boolean;
 }
-
-export interface Project extends ProjectMeta{
+export interface Blogpost extends BlogpostMeta{
     content: string;
 }
 
-// Get metadata for all projects
-export function getAllProjects(): ProjectMeta[] {
-    if (!fs.existsSync(projectsDirectory)) {
+
+// Get metadata for all blogs
+export function getAllBlogposts(): BlogpostMeta[] {
+    if (!fs.existsSync(blogpostsDirectory)) {
         return [];
     }
 
-    const fileNames = fs.readdirSync(projectsDirectory);
+    const fileNames = fs.readdirSync(blogpostsDirectory);
 
     const projects = fileNames
         .filter((fileName) => fileName.endsWith(".md"))
         .map((fileName) => {
             const slug = fileName.replace(/\.md$/, "");
-            const fullPath = path.join(projectsDirectory, fileName);
+            const fullPath = path.join(blogpostsDirectory, fileName);
             const fileContents = fs.readFileSync(fullPath, "utf8");
             const { data } = matter(fileContents);
 
@@ -64,22 +61,19 @@ export function getAllProjects(): ProjectMeta[] {
                 slug,
                 title: data.title ?? slug,
                 date: data.date ?? "",
-                thumbnail: data.thumbnail ?? "",
                 description: data.description,
-                banner: data.banner,
                 tags: data.tags ?? [],
-                software: data.software ?? [],
                 featured: data.featured ?? false,
-            } as ProjectMeta;
+            } as BlogpostMeta;
         });
 
     // Sort by date
     return projects.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-// Get metadata and project content by slug
-export async function getProjectBySlug(slug: string): Promise<Project | null> {
-    const fullPath = path.join(projectsDirectory, `${slug}.md`);
+// Get metadata and blog content by slug
+export async function getBlogpostBySlug(slug: string): Promise<Blogpost | null> {
+    const fullPath = path.join(blogpostsDirectory, `${slug}.md`);
 
     if (!fs.existsSync(fullPath)) {
         return null;
@@ -96,24 +90,21 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
         slug,
         title: data.title ?? slug,
         date: data.date ?? "",
-        thumbnail: data.thumbnail ?? "",
         description: data.description,
-        banner: data.banner,
         tags: data.tags ?? [],
-        software: data.software ?? [],
         featured: data.featured ?? false,
         content: contentHtml,
     };
 }
 
 
-export function getAllProjectSlugs(): string[] {
-    if (!fs.existsSync(projectsDirectory)) {
+export function getAllBlogpostSlugs(): string[] {
+    if (!fs.existsSync(blogpostsDirectory)) {
         return [];
     }
 
     return fs
-        .readdirSync(projectsDirectory)
+        .readdirSync(blogpostsDirectory)
         .filter((fileName) => fileName.endsWith(".md"))
         .map((fileName) => fileName.replace(/\.md$/, ""));
 }

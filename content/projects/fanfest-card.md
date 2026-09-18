@@ -13,7 +13,7 @@ featured: false
 
 # Fanfest Card
 
-In 2026, FInal Fantasy XIV Fanfest was held in Berlin. For the group of friends I went with, I designed these personalised cards with our in-game characters on them.
+In 2026, Final Fantasy XIV Fanfest was held in Berlin. For the group of friends I went with, I designed these personalised cards with our in-game characters on them.
 
 ![Screenshot_beautyrender.png](/projects/fanfestcard/Screenshot_beautyrender.png)
 ![Screenshot_metallic.png](/projects/fanfestcard/Screenshot_metallic.png)
