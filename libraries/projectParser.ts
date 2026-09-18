@@ -3,8 +3,33 @@ import path from "path";
 import matter from "gray-matter";
 import {remark} from "remark";
 import remarkHtml from "remark-html";
+import rehypeFormat from 'rehype-format';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
+import rehypeStringify from 'rehype-stringify';
+import remarkDirective from 'remark-directive';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import { unified } from 'unified';
 
 const projectsDirectory = path.join(process.cwd(), "content", "projects");
+
+
+const markdownProcessor = unified()
+    .use(remarkParse)
+    .use(remarkFrontmatter)
+    .use(remarkDirective)
+    .use(remarkGfm)
+    .use(remarkMath)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeSanitize)
+    .use(rehypeFormat)
+    .use(rehypeStringify);
+
 
 export interface ProjectMeta {
     slug: string;
@@ -67,8 +92,8 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
     const { data, content } = matter(fileContents);
 
     // Convert .md to html
-    const processedContent = await remark().use(remarkHtml).process(content);
-    const contentHtml = processedContent.toString();
+    const processedContent = await markdownProcessor.process(content);
+    const contentHtml = String(processedContent);
 
     return {
         slug,

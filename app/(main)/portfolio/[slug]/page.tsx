@@ -60,7 +60,7 @@ export default async function ProjectPage({
                 {/* ArtStation-style two-column layout */}
                 <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
 
-                    {/* ===== Left: Media + Content ===== */}
+                    {/* ----- Left: Media + Content ----- */}
                     <main className="flex flex-col gap-6">
                         {/* Main media card */}
                         <div className="card overflow-hidden rounded-xl shadow-xl">
@@ -81,20 +81,14 @@ export default async function ProjectPage({
                         {/* Markdown content card */}
                         <div className="card rounded-xl p-6 shadow-lg sm:p-8">
                             <div
-                                className="prose prose-sm max-w-none text-(--color-text)
-                                    prose-headings:text-(--color-text)
-                                    prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-6 prose-h2:mb-3
-                                    prose-h3:text-lg prose-h3:font-medium prose-h3:mt-5 prose-h3:mb-2
-                                    prose-p:text-(--color-text) prose-p:leading-relaxed
-                                    prose-a:text-(--color-pine)
-                                    prose-img:rounded-lg prose-img:shadow-md
-                                    prose-li:text-(--color-text)"
+                                /* Using .markdown-content from the CSS */
+                                className="markdown-content"
                                 dangerouslySetInnerHTML={{ __html: project.content }}
                             />
                         </div>
                     </main>
 
-                    {/* ===== Right: Metadata Sidebar ===== */}
+                    {/* ----- Right: Metadata Sidebar ----- */}
                     <aside className="flex flex-col gap-4 lg:sticky lg:top-6 lg:self-start">
                         {/* Title block */}
                         <div className="card p-5">
