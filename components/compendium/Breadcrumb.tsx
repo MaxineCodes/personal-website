@@ -6,10 +6,30 @@ interface BreadcrumbProps {
 }
 
 export function Breadcrumb({ slug, title }: BreadcrumbProps) {
+
     const breadcrumbs = [
         { label: "ItsMaxine.eu", href: "/", isLast: false },
         { label: "Compendium", href: "/compendium", isLast: false },
     ];
+
+    // If no slugs are given (is done explicitly by the landing page)
+    if (slug.length === 0) {
+        return (
+            <nav aria-label="Breadcrumb" className="mb-6">
+                <ol className="flex flex-wrap items-center gap-2 text-sm">
+                    <li>
+                        <Link href="/" className="text-(--color-text) hover:text-(--color-rose) transition-colors">
+                            ItsMaxine.eu
+                        </Link>
+                    </li>
+                    <li className="flex items-center gap-2">
+                        <span className="text-(--color-text)/50">/</span>
+                        <span className="text-(--color-rose) font-medium">Compendium</span>
+                    </li>
+                </ol>
+            </nav>
+        );
+    }
 
     // Build cumulative paths for each segment
     slug.forEach((segment, index) => {

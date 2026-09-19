@@ -23,8 +23,11 @@ export function Sidebar({ allArticles, currentSlug }: SidebarProps) {
     const buildTree = (): TreeNode[] => {
         const root: TreeNode[] = [];
 
+        // ✅ FIX: Filter BEFORE iterating (only once)
+        const filteredArticles = allArticles.filter(article => article.slug !== "page");
+
         // First pass: Register all documents (including standalone docs like graphics.md)
-        allArticles.forEach((article) => {
+        filteredArticles.forEach((article) => {
             const parts = article.slug.split("/");
             let currentLevel = root;
 
@@ -55,13 +58,12 @@ export function Sidebar({ allArticles, currentSlug }: SidebarProps) {
         });
 
         // Second pass: Assign slugs to parent nodes that also have standalone documents
-        // This allows "Graphics" folder AND "graphics.md" to coexist
         const assignParentSlugs = (nodes: TreeNode[], pathPrefix: string = "") => {
             nodes.forEach(node => {
                 const fullPath = pathPrefix ? `${pathPrefix}/${node.name}` : node.name;
 
                 // Check if there's a standalone document for this path
-                const standaloneDoc = allArticles.find(a => a.slug === fullPath);
+                const standaloneDoc = filteredArticles.find(a => a.slug === fullPath);
                 if (standaloneDoc && !node.slug) {
                     node.slug = standaloneDoc.slug;
                     node.title = standaloneDoc.title;

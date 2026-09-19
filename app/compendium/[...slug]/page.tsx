@@ -47,7 +47,8 @@ export default async function CompendiumPage({params,}:
                     {/* MIDDLE: Article Content */}
                     <main className="flex flex-col gap-6">
                         <div className="card rounded-xl p-6 shadow-lg sm:p-8">
-                            <h1 className="text-3xl font-bold mb-6">{CompendiumArticle.title}</h1>
+                            <h2 className="text-1xl font-semi-old mb-2 text-(--color-muted)">{CompendiumArticle.title}</h2>
+                            {/* <h1 className="text-1xl font-bold mb-2 text-(--color-muted)">{CompendiumArticle.slug}</h1> */}
                             <div
                                 className="markdown-content"
                                 dangerouslySetInnerHTML={{ __html: CompendiumArticle.content }}
