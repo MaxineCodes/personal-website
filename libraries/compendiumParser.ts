@@ -93,8 +93,8 @@ export async function getCompendiumArticleBySlug(slug: string): Promise<Compendi
     return {
         slug,
         title: data.title ?? slug,
-        dateCreated: data.date ?? "",
-        dateEdited: data.thumbnail ?? "",
+        dateCreated: data.dateCreated ?? "",
+        dateEdited: data.dateEdited ?? "",
         content: contentHtml,
     };
 }
@@ -124,4 +124,45 @@ export function getAllCompendiumArticleSlugs(): string[] {
 
     walk(compendiumDirectory);
     return slugs;
+}
+
+export function getAllCompendiumArticlesMeta(): CompendiumArticleMeta[] {
+    if (!fs.existsSync(compendiumDirectory)) {
+        return [];
+    }
+
+    const articles: CompendiumArticleMeta[] = [];
+
+    const walk = (dir: string, parentSlugParts: string[] = []) => {
+        const entries = fs.readdirSync(dir, { withFileTypes: true });
+
+        for (const entry of entries) {
+            if (entry.isDirectory()) {
+                // Recurse into subfolder, remembering its name for slugs
+                walk(
+                    path.join(dir, entry.name),
+                    [...parentSlugParts, entry.name]
+                );
+            } else if (entry.isFile() && entry.name.endsWith(".md")) {
+                const slug = [...parentSlugParts, entry.name.replace(/\.md$/, "")].join("/");
+                const fullPath = path.join(dir, entry.name);
+                const fileContents = fs.readFileSync(fullPath, "utf8");
+                const { data } = matter(fileContents);
+
+                articles.push({
+                    slug,
+                    title: (data.title as string) ?? slug.split("/").pop()!,
+                    dateCreated: (data.dateCreated as string) ?? "",
+                    dateEdited: (data.dateEdited as string) ?? "",
+                });
+            }
+        }
+    };
+
+    walk(compendiumDirectory);
+
+    // Newest first (empty dates sink to bottom)
+    return articles.sort((a, b) =>
+        b.dateCreated.localeCompare(a.dateCreated)
+    );
 }
